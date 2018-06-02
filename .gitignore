@@ -2,3 +2,4 @@ public/bundle.js
 node_modules
 database/mongoDb
 .env
+package-lock.json
