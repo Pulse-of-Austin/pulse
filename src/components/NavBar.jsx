@@ -51,6 +51,11 @@ class NavBar extends React.Component {
 				>
 					Sign In
 				</Menu.Item>
+				<Menu.Item link={true} position='left'>
+					<Link to='/portal' style={{ color: 'black' }}>
+						Portal
+					</Link>
+				</Menu.Item>
 				{this.state.navBarOpen 
 					? <Menu vertical={true} fixed='right' style={{height: 'auto', width: 'auto'}}>
 						<Menu.Item>
