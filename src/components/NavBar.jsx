@@ -35,7 +35,6 @@ class NavBar extends React.Component {
 			<Menu
 				size='huge'
 				fixed='top'
-				textAlign='right'
 				style={{ minHeight: '40px' }}
 			>
 				<Link to='/'>
