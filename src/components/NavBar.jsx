@@ -1,14 +1,24 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
 import { Menu } from 'semantic-ui-react';
+
+import Login from './Login.jsx';
 
 class NavBar extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-
+			loginModalOpen: false
 		}
+	}
+
+	toggleLoginModal() {
+		this.setState({
+			loginModalOpen: !this.state.loginModalOpen
+		})
 	}
 
 	render() {
@@ -23,14 +33,13 @@ class NavBar extends React.Component {
 					<Menu.Item link={true}>Home</Menu.Item>
 				</Link>
 				<Menu.Menu position='right'>
-					<Link to='/login'>
 						<Menu.Item
 							position='right'
 							link={true}
+							onClick={this.toggleLoginModal.bind(this)}
 						>
 						Login
 						</Menu.Item>
-					</Link>
 					<Link to='/profile'>
 						<Menu.Item
 							position='right'
@@ -48,9 +57,23 @@ class NavBar extends React.Component {
 						</Menu.Item>
 					</Link>
 				</Menu.Menu>
+				{this.state.loginModalOpen && <Login 
+					loginModalOpen={this.state.loginModalOpen}
+					toggleLoginModal={this.toggleLoginModal.bind(this)} />}
 			</Menu>
 		)
 	}
 }
 
-export default NavBar;
+const mapStateToProps = (state) => (
+	{
+		loggedIn: state.loggedIn
+	}
+)
+
+const mapDispatchToProps = (dispatch) => (
+	bindActionCreators({  }, dispatch)
+)
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
