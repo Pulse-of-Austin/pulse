@@ -20,7 +20,11 @@ const App = () => (
 
 ReactDOM.render(
   (
-  <Provider store={createStoreWithMiddleware(reducers)} >
+    <Provider store={
+      createStoreWithMiddleware(
+        reducers, 
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    )} >
     <BrowserRouter>
       <div>
         <Route path='/' component={App} />
