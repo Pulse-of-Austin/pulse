@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Accordion } from 'semantic-ui-react';
+import { Grid, Accordion, Header } from 'semantic-ui-react';
 
 import NavBar from './NavBar.jsx';
 import Footer from './Footer.jsx';
@@ -156,6 +156,7 @@ class WeighIn extends React.Component {
 					<NavBar />
 				</Grid.Row>
 				<Grid.Row style={{ marginLeft: '100px', marginTop: '100px' }}>
+					<Header as='h1' content='Topics' />
 					<Accordion style={{marginTop: '200px'}}>
 						{this.state.categories.map((category, index) => 
 							<Category 
