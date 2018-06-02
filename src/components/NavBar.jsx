@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
 import { Menu } from 'semantic-ui-react';
 
-import Login from './Login.jsx';
+import LoginModal from './LoginModal.jsx';
 
 class NavBar extends React.Component {
 	constructor(props) {
@@ -57,7 +57,7 @@ class NavBar extends React.Component {
 						</Menu.Item>
 					</Link>
 				</Menu.Menu>
-				{this.state.loginModalOpen && <Login 
+				{this.state.loginModalOpen && <LoginModal
 					loginModalOpen={this.state.loginModalOpen}
 					toggleLoginModal={this.toggleLoginModal.bind(this)} />}
 			</Menu>
