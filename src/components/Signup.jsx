@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { Modal, Form, Button, Divider } from 'semantic-ui-react';
 
-class Login extends React.Component {
+class Signup extends React.Component {
 	constructor(props) {
 		super(props);
 
@@ -36,13 +36,13 @@ class Login extends React.Component {
 							<Form.Input placeholder='email' label='email' />
 							<Form.Input placeholder='password' type='password' label='password' />
 						</Form.Group>
-						<Button 
+						<Button
 							primary={true}
 							content='Log In'
 							onClick={this.login.bind(this)}
 						/>
 					</Form>
-					<Divider/>
+					<Divider />
 					<Modal.Content>
 						New to Pulse? <Link to='/signup'>Sign up</Link>
 					</Modal.Content>
@@ -52,4 +52,4 @@ class Login extends React.Component {
 	}
 }
 
-export default Login;
+export default Signup;
