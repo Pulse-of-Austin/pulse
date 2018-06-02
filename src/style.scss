@@ -39,6 +39,12 @@ p {
     color: $gray;
 }
 
+#nav_bar {
+    padding: 1%;
+    color: $white;
+    background-color: $orange;
+}
+
 // FLEXBOX
 .space_between {
     display: flex;

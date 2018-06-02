@@ -32,69 +32,63 @@ class NavBar extends React.Component {
 
 	render() {
 		return (
-			<Menu
-				size='huge'
-				fixed='top'
-				style={{ minHeight: '40px' }}
-			>
+			<Menu id="nav_bar" className='space_between' fixed='top'  style={{ minHeight: '40px' }}>
+
 				<Link to='/'>
 					<Menu.Item link={true}>
-						<Header>
+						<h3 className="white">
 							The Pulse of Austin
-						</Header>
+						</h3>
 					</Menu.Item>
 				</Link>
-				<Menu.Item
-					position='left'
-					link={true}
-					onClick={this.toggleLoginModal}
-				>
-					Sign In
-				</Menu.Item>
-				<Menu.Item link={true} position='left'>
-					<Link to='/portal' style={{ color: 'black' }}>
-						Portal
-					</Link>
-				</Menu.Item>
-				{this.state.navBarOpen 
-					? <Menu vertical={true} fixed='right' style={{height: 'auto', width: 'auto'}}>
-						<Menu.Item>
-							<Icon
-								name='bars'
-								size='huge'
-								style={{ cursor: 'pointer' }}
-								onClick={this.toggleNavbar}
-							/>
-						</Menu.Item>
-						<Menu.Item
-							position='right'
-							link={true}
-						>
-							<Link to='/profile'>
+
+				<Menu.Menu position='right'>
+
+					<Menu.Item className='white' link={true} onClick={this.toggleLoginModal}
+					>
+						<h3 className='white'>
+							Sign In
+						</h3>
+					</Menu.Item>
+
+					<Menu.Item className='white' link={true}>
+						<Link to='/portal'>
+							<h3 className='white'>
+								Portal
+							</h3>
+						</Link>
+					</Menu.Item>
+
+					<Menu.Item className='white' link={true}>
+						<Link to='/portal'>
+							<h3 className='white'>
+								Explore
+							</h3>
+						</Link>
+					</Menu.Item>
+
+					<Menu.Item className='white' link={true}>
+						<Link to='/portal'>
+							<h3 className='white'>
+								Local Gov
+							</h3>
+						</Link>
+					</Menu.Item>
+
+					<Menu.Item className='white' link={true}>
+						<Link to='/portal'>
+							<h3 className='white'>
 								Profile
-							</Link>
-						</Menu.Item>
-						<Menu.Item
-							position='right'
-							link={true}
-						>
-							<Link to='/favorites'>
-								Favorites
-							</Link>
-						</Menu.Item>
-				</Menu>
-				: <Menu.Menu position='right'>
-					<Icon 
-						name='bars' 
-						size='huge'
-						style={{cursor: 'pointer'}}
-						onClick={this.toggleNavbar}
-					/>
+							</h3>
+						</Link>
+					</Menu.Item>
+
 				</Menu.Menu>
-				}
+				
 				{this.state.loginModalOpen && <LoginModal
 					loginModalOpen={this.state.loginModalOpen}
 					toggleLoginModal={this.toggleLoginModal} />}
+
 			</Menu>
 		)
 	}
