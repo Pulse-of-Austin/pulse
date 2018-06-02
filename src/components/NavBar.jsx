@@ -35,6 +35,7 @@ class NavBar extends React.Component {
 			<Menu
 				size='huge'
 				fixed='top'
+				textAlign='right'
 				style={{ minHeight: '40px' }}
 			>
 				<Link to='/'>
@@ -44,32 +45,40 @@ class NavBar extends React.Component {
 						</Header>
 					</Menu.Item>
 				</Link>
-				{this.state.loginModalOpen 
-					? <Menu.Menu position='right'>
-							<Menu.Item
-								position='right'
-								link={true}
-								onClick={this.toggleLoginModal}
-							>
-							Login
-							</Menu.Item>
-						<Link to='/profile'>
-							<Menu.Item
-								position='right'
-								link={true}
-							>
-							Profile
-							</Menu.Item>
-						</Link>
-						<Link to='/favorites'>
-							<Menu.Item
-								position='right'
-								link={true}
-							>
-							Favorites
-							</Menu.Item>
-						</Link>
-				</Menu.Menu>
+				<Menu.Item
+					position='left'
+					link={true}
+					onClick={this.toggleLoginModal}
+				>
+					Sign In
+				</Menu.Item>
+				{this.state.navBarOpen 
+					? <Menu vertical={true} fixed='right' style={{height: 'auto', width: 'auto'}}>
+						<Menu.Item>
+							<Icon
+								name='bars'
+								size='huge'
+								style={{ cursor: 'pointer' }}
+								onClick={this.toggleNavbar}
+							/>
+						</Menu.Item>
+						<Menu.Item
+							position='right'
+							link={true}
+						>
+							<Link to='/profile'>
+								Profile
+							</Link>
+						</Menu.Item>
+						<Menu.Item
+							position='right'
+							link={true}
+						>
+							<Link to='/favorites'>
+								Favorites
+							</Link>
+						</Menu.Item>
+				</Menu>
 				: <Menu.Menu position='right'>
 					<Icon 
 						name='bars' 
