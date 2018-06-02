@@ -14,7 +14,29 @@ class LoginModal extends React.Component {
 	}
 
 	login() {
+		axios.post('/login', {
+			email: this.state.email,
+			password: this.state.password
+		})
+		.then((data) => {
 
+		})
+		.catch((err) => {
+			console.error(err);
+		})
+	}
+
+	signup() {
+		axios.post('/signup', {
+			email: this.state.email,
+			password: this.state.password
+		})
+			.then((data) => {
+
+			})
+			.catch((err) => {
+				console.error(err);
+			})
 	}
 
 	toggleSignUp() {
@@ -43,7 +65,7 @@ class LoginModal extends React.Component {
 							<Button 
 								primary={true}
 								content='Log In'
-								onClick={this.login.bind(this)}
+								onClick={this.state.loginOrSignup === 'login' ? this.login.bind(this) : this.signup.bind(this)}
 							/>
 						</Form>
 						<Divider/>
