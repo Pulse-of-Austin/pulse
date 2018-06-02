@@ -5,26 +5,26 @@ import NavBar from './NavBar.jsx';
 import Footer from './Footer.jsx';
 
 class Main extends React.Component {
-	constructor(props) {
-		super(props);
+  constructor(props) {
+    super(props);
 
-		this.state = {
-
-		}
-	}
-
-	render() {
-		return (
-			<Grid>
-				<Grid.Row>
-					<NavBar />
-				</Grid.Row>
-				<Grid.Row>
-					<Footer />
-				</Grid.Row>
-			</Grid>
-		);
+    this.state = { placeholder: '' };
   }
+
+  componentDidMount = () => {
+    console.log('test');
+  }
+
+  render = () => (
+      <Grid>
+        <Grid.Row>
+          <NavBar />
+        </Grid.Row>
+        <Grid.Row>
+          <Footer />
+        </Grid.Row>
+      </Grid>
+  );
 }
 
 export default Main;
