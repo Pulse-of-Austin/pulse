@@ -2,19 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, browserHistory } from 'react-router-dom';
 import reducers from './reducers';
 import './style.scss';
 
-import Main from './components/Main.jsx';
+import SplashPage from './components/SplashPage.jsx';
 import Profile from './components/Profile.jsx';
-import Favorites from './components/Favorites.jsx';
 import AdminPortal from './components/AdminPortal.jsx';
+import Learn from './components/Learn.jsx';
+import WeighIn from './components/WeighIn.jsx';
+import Know from './components/Know.jsx';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 const App = () => (
-  <Main />
+  <SplashPage />
 );
 
 
@@ -25,14 +27,16 @@ ReactDOM.render(
         reducers, 
         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )} >
-    <BrowserRouter>
-      <div>
-        <Route path='/' component={App} />
-        <Route path='/profile' component={Profile} />
-        <Route exact path='/portal' component={AdminPortal} />
-        <Route path='/favorites' component={Favorites} />
-      </div>
-  </BrowserRouter>
+      <Router history={browserHistory}>
+        <Switch>
+          <Route exact path='/' component={App} />
+          <Route exact path='/portal' component={AdminPortal} />
+          <Route path='/profile' component={Profile} />
+          <Route path='/learn' component={Learn} />
+          <Route path='/weigh-in' component={WeighIn} />
+          <Route path='/know' component={Know} />
+        </Switch>
+    </Router>
   </Provider>
   ), document.getElementById('app')
 );
