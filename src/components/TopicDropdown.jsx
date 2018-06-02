@@ -10,22 +10,22 @@ class TopicDropdown extends Component {
   render() {
     const data = [
       {
-        key: 'test1',
+        key: '0',
         value: 'test1111',
         text: 'test1',
       },
       {
-        key: 'test1',
+        key: '1',
         value: 'test1111',
         text: 'test1',
       },
       {
-        key: 'test1',
+        key: '2',
         value: 'test1111',
         text: 'test1',
       },
       {
-        key: 'test1',
+        key: '3',
         value: 'test1111',
         text: 'test1',
       },
