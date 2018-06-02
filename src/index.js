@@ -9,6 +9,7 @@ import './style.scss';
 import Main from './components/Main.jsx';
 import Profile from './components/Profile.jsx';
 import Favorites from './components/Favorites.jsx';
+import AdminPortal from './components/AdminPortal.jsx';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
@@ -28,6 +29,7 @@ ReactDOM.render(
       <div>
         <Route path='/' component={App} />
         <Route path='/profile' component={Profile} />
+        <Route exact path='/portal' component={AdminPortal} />
         <Route path='/favorites' component={Favorites} />
       </div>
   </BrowserRouter>
