@@ -8,6 +8,7 @@ import './style.scss';
 
 import SplashPage from './components/SplashPage.jsx';
 import Profile from './components/Profile.jsx';
+import AdminPortal from './components/AdminPortal.jsx';
 import Learn from './components/Learn.jsx';
 import WeighIn from './components/WeighIn.jsx';
 import Know from './components/Know.jsx';
@@ -29,6 +30,7 @@ ReactDOM.render(
       <Router history={browserHistory}>
         <Switch>
           <Route exact path='/' component={App} />
+          <Route exact path='/portal' component={AdminPortal} />
           <Route path='/profile' component={Profile} />
           <Route path='/learn' component={Learn} />
           <Route path='/weigh-in' component={WeighIn} />
