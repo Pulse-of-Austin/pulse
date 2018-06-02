@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, browserHistory } from 'react-router-dom';
 import reducers from './reducers';
 import './style.scss';
 
@@ -26,15 +26,15 @@ ReactDOM.render(
         reducers, 
         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )} >
-    <BrowserRouter>
-      <div>
-        <Route path='/' component={App} />
-        <Route path='/profile' component={Profile} />
-        <Route path='/learn' component={Learn} />
-        <Route path='/weign-in' component={WeighIn} />
-        <Route path='/know' component={Know} />
-      </div>
-  </BrowserRouter>
+      <Router history={browserHistory}>
+        <Switch>
+          <Route exact path='/' component={App} />
+          <Route path='/profile' component={Profile} />
+          <Route path='/learn' component={Learn} />
+          <Route path='/weigh-in' component={WeighIn} />
+          <Route path='/know' component={Know} />
+        </Switch>
+    </Router>
   </Provider>
   ), document.getElementById('app')
 );
