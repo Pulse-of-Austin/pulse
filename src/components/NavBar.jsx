@@ -13,6 +13,7 @@ class NavBar extends React.Component {
 		this.state = {
 			loginModalOpen: false
 		}
+		this.toggleLoginModal = this.toggleLoginModal.bind(this);
 	}
 
 	toggleLoginModal() {
@@ -36,7 +37,7 @@ class NavBar extends React.Component {
 						<Menu.Item
 							position='right'
 							link={true}
-							onClick={this.toggleLoginModal.bind(this)}
+							onClick={this.toggleLoginModal}
 						>
 						Login
 						</Menu.Item>
@@ -59,7 +60,7 @@ class NavBar extends React.Component {
 				</Menu.Menu>
 				{this.state.loginModalOpen && <LoginModal
 					loginModalOpen={this.state.loginModalOpen}
-					toggleLoginModal={this.toggleLoginModal.bind(this)} />}
+					toggleLoginModal={this.toggleLoginModal} />}
 			</Menu>
 		)
 	}

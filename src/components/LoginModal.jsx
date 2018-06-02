@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 import { Modal, Form, Button, Divider } from 'semantic-ui-react';
 
@@ -11,6 +12,14 @@ class LoginModal extends React.Component {
 			email: '',
 			password: ''
 		}
+
+		this.onChange = this.onChange.bind(this)
+		this.login = this.login.bind(this)
+		this.signup = this.signup.bind(this)
+	}
+
+	onChange(e, { name, value }) {
+		this.setState({ [name]: value })
 	}
 
 	login() {
@@ -59,19 +68,32 @@ class LoginModal extends React.Component {
 					<Modal.Content>
 						<Form widths='equal'>
 							<Form.Group inline={false}>
-								<Form.Input placeholder='email' label='email' />
-								<Form.Input placeholder='password' type='password' label='password' />
+								<Form.Input 
+									placeholder='email' 
+									label='email'
+									name='email'
+									value={this.state.email}
+									onChange={this.onChange}
+								/>
+								<Form.Input 
+									placeholder='password' 
+									type='password' 
+									label='password'
+									name='password'
+									value={this.state.password}
+									onChange={this.onChange}
+								/>
 							</Form.Group>
 							<Button 
 								primary={true}
 								content='Log In'
-								onClick={this.state.loginOrSignup === 'login' ? this.login.bind(this) : this.signup.bind(this)}
+								onClick={this.state.loginOrSignup === 'login' ? this.login : this.signup}
 							/>
 						</Form>
 						<Divider/>
 						<Modal.Content>
 							{this.state.loginOrSignup === 'login' ? 'New to Pulse?' : 'Already a member?'} 
-								<a style={{cursor: 'pointer'}} onClick={this.toggleSignUp.bind(this)}>
+								<a style={{cursor: 'pointer'}} onClick={this.toggleSignUp}>
 									{this.state.loginOrSignup === 'login' ? ' Sign up' : ' Log in'}
 								</a>
 						</Modal.Content>
