@@ -32,12 +32,12 @@ class NavBar extends React.Component {
 
 	render() {
 		return (
-			<Menu id="nav_bar" className='space_between' fixed='top'  style={{ height: '100px' }}>
+			<Menu id="nav_bar" className='space_between' fixed='top'  style={{ height: '70px' }}>
 
 				<Link to='/'>
-						<h3 className="white">
+						<h4 className="white">
 							The Pulse of Austin
-						</h3>
+						</h4>
 						<h5 className="white" style={{marginTop: '0'}}>
 							Making civic engagement personal and simple.
 						</h5>
