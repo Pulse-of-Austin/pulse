@@ -1,21 +1,38 @@
 import React from 'react'
 import { Feed, Icon } from 'semantic-ui-react'
-import { Segment,Divider } from 'semantic-ui-react'
+import { Segment, Divider, Button, Header } from 'semantic-ui-react'
 
-const SegmentTrending = () => (
+class TrendingTopics extends React.Component {
+  constructor(props) {
+    super(props);
 
-  <Segment.Group>
-    <Segment>
-    <h2> This is the title </h2>
-    </Segment>
-    <Segment>
-    <button class="primary button">
-      Learn More
-    </button>
-    <Divider horizontal></Divider>
-    </Segment>
-    <Segment.Group>
-      <Segment>Nested choice 1 onClick={this.onItemClick} data-id="1" className={this.state.selectedItem == 1 ? "on" : "off"}>Component 1 </Segment>
-      <Segment>Nested choice 2 onClick={this.onItemClick} data-id="2" className={this.state.selectedItem == 2 ? "on" : "off"}>Component 2</Segment>
-      <Segment>Nested choice 3 onClick={this.onItemClick} data-id="3" className={this.state.selectedItem == 3 ? "on" : "off"}>Component 3</Segment>
-    </Segment.Group>
+    this.state = {
+
+    }
+  }
+
+  handleClick = () => {
+
+  }
+
+  render() {
+    return (
+      <Segment textAlign='center' color='grey' style={{marginLeft: '60%', width: '300px', marginTop: '-180px'}}>
+        <Header as='h3' content='DOCKLESS MOBILITY' />
+        <p>What is essential for Austin to consider in its bikeshare data policy?</p>
+        <Button primary={true}>
+          Learn More
+        </Button>
+        <Divider />
+        <Segment.Group>
+          <Button onClick={this.handleClick}>Collect data on bike reds only and share data with the city</Button>
+          <Button onClick={this.handleClick}>Collect data for city use only</Button>
+          <Button onClick={this.handleClick}>Minimize rental cost and allow all data collection</Button>
+        </Segment.Group>
+        <Header as='h3' content='WEIGH IN NOW' style={{fontWeight: 'bold', textDecoration: 'underline'}}/>
+      </Segment>
+    )
+  }
+}
+
+export default TrendingTopics;
