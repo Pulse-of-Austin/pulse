@@ -49,10 +49,11 @@ class Know extends React.Component {
 					</div>
 					
 					<HorizontalFeed />
+					<TrendingTopics />
 				</section>
 
 				<section>
-					<TrendingTopics />
+					
 				</section>
 
 				<Footer />
