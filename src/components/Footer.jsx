@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu } from 'semantic-ui-react';
+import { Menu, Divider, Image } from 'semantic-ui-react';
 
 class Footer extends React.Component {
 	constructor(props) {
@@ -18,23 +18,22 @@ class Footer extends React.Component {
 				inverted={true}
 				style={{ minHeight: '40px' }}
 			>
-				<Menu.Menu position='left'>
-					<Menu.Item position='left'>
-						&copy; 2018 &mdash; Pulse of Austin
+				<Menu.Menu position='center'>
+					<Menu.Item position='center'>
+					 <Image src=''/>
+					<div class="ui borderless menu">
+							<a class="item">About Us</a>
+							<a class="item">Contact Us</a>
+							<a class="item">FAQ</a>
+					</div>
+					<div class="ui horizontal divider"> </div>
+					<div class="ui borderless menu">
+							<a class="item"> <i class="instagram icon"></i> </a>
+							<a class="item"> <i class="facebook f icon"></i> </a>
+					</div>
 					</Menu.Item>
-					<div class="ui three column very relaxed grid">
-  					<div class="column">
-    					<p>About Us</p>
-    					<p>Contact</p>
-    					<p>Terms and Conditions</p>
-  					</div>
-						<div class="ui vertical divider"> and </div>
- 							<div class="column">
-	 							<p>Facebook</p>
-								<p>Twitter</p>
-							  <p>Instagram</p>
-							 </div>
-							 
+
+
 				</Menu.Menu>
 			</Menu>
 		)
