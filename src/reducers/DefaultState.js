@@ -3,6 +3,7 @@ export const DefaultState = {
 	admin: false,
 	user: null,
 	viewFilter: false,
+	username: 'Kate',
 	topicStubs: [
 		{
 			id: 0,

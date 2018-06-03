@@ -59,6 +59,13 @@ class NavBar extends React.Component {
 
 				<Menu.Menu position='right'>
 
+					{this.props.loggedIn &&
+						<Menu.Item className='white'>
+							<h4 className='white'>
+								Welcome{`, ${this.props.username}` || null}!
+							</h4>
+						</Menu.Item>}
+
 					<Menu.Item className='white' link={true} onClick={this.props.loggedIn ? this.logout : this.toggleLoginModal}
 					>
 						<h4 className='white'>
@@ -115,7 +122,8 @@ class NavBar extends React.Component {
 const mapStateToProps = (state) => (
 	{
 		loggedIn: state.UserReducer.loggedIn,
-		admin: state.UserReducer.admin
+		admin: state.UserReducer.admin,
+		username: state.UserReducer.username
 	}
 )
 
