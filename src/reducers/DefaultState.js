@@ -1,7 +1,9 @@
 export const DefaultState = {
-	loggedIn: false,
+	loggedIn: true,
+	admin: true,
 	user: null,
 	viewFilter: false,
+	username: 'Kate',
 	topicStubs: [
 		{
 			id: 0,
@@ -81,6 +83,79 @@ export const DefaultState = {
 				who: 'East Austin Resident',
 				when: '20 April 2018',
 				what: 'With dockless bikes, not only can we collected the dataa bout where the trip started and ended, but we can also collect data on the exact route the rider took. This granularity of data is unprecedented and would be instrumental in strategically planning biking infrastructures.'
+			}
+		],
+		polls: [
+			{
+				options: [
+					{
+						letter: 'A',
+						details: 'Yes',
+						votes: 20
+					},
+					{
+						letter: 'B',
+						details: 'No',
+						votes: 70
+					},
+					{
+						letter: 'C',
+						details: 'Other thoughts',
+						votes: 12
+					},
+				],
+				question: 'Should the city require access to the data collected by dockless transportation companies?'
+			},
+			{
+				options: [
+					{
+						letter: 'A',
+						details: 'Whatever the companies choose',
+						votes: 65
+					},
+					{
+						letter: 'B',
+						details: 'Ridership data only',
+						votes: 15
+					},
+					{
+						letter: 'C',
+						details: 'Other thoughts',
+						votes: 10
+					},
+				],
+				question: 'What type of data should the companies be allowed to collect?'
+			},
+			{
+				options: [
+					{
+						letter: 'A',
+						details: 'Data',
+						votes: 0
+					},
+					{
+						letter: 'B',
+						details: 'Congestion',
+						votes: 0
+					},
+					{
+						letter: 'C',
+						details: 'Access / Equity',
+						votes: 3
+					},
+					{
+						letter: 'D',
+						details: 'Safety',
+						votes: 2
+					},
+					{
+						letter: 'E',
+						details: 'Something else',
+						votes: 0
+					},
+
+				],
+				question: 'Further thoughts on:'
 			}
 		]
 	}

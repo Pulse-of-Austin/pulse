@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Link } from 'react-router-dom';
 import { Grid, Button, Header, Image, Icon, Card, Container, Divider, Segment } from 'semantic-ui-react';
 
 import NavBar from './NavBar.jsx';
@@ -13,6 +14,10 @@ class TopicPage extends React.Component {
 		this.state = {
 
 		}
+	}
+
+	select = () => {
+
 	}
 
 	render() {
@@ -74,7 +79,7 @@ class TopicPage extends React.Component {
 					</Container>
 					<Segment textAlign='center' style={{marginBottom: '200px'}}>
 						<Header as='h1' content='MILESTONES' />
-						<Image src='./images/milestones.png' />
+						<Image style={{width: '40%', margin: 'auto'}} src='./images/milestones.png' />
 						<Header as='h1' content={'WHERE YOU\'LL FIND DOCKLESS TRANSPORTATION'} />
 						<Image src='./images/map.png' />
 					</Segment>
@@ -86,9 +91,9 @@ class TopicPage extends React.Component {
 									<Header style={{marginTop: '100px'}} as='h2' content='Dockless Ridership Data is Highly Valuable' />
 								</Grid.Column>
 								<Grid.Column>
-									{this.props.selectedTopic.perspectives.map(perspective => {
+									{this.props.selectedTopic.perspectives.map((perspective, index) => {
 										return (
-											<Card>
+											<Card key={index}>
 												<Card.Header content={perspective.who} />
 												<Card.Meta><Icon name='clock' />{perspective.when}</Card.Meta>
 												<Card.Content content={perspective.what} />
@@ -99,6 +104,39 @@ class TopicPage extends React.Component {
 							</Grid.Row>
 						</Grid>
 					</Container>
+				</Container>
+				<Link to='/topic#weigh-in' style={{textAlign: 'center', position: 'fixed', bottom: '50px', right: '50px'}}>
+					<Header as='h4' content={'Weigh In Now!'} />
+					<Icon 
+						name='chevron down' 
+						size='big' 
+						link={true} 
+						bordered={true}
+					/>
+				</Link>
+				<Container textAlign='center'>
+					<Divider />
+					<Header as='h1' content='Weigh In' />
+					<Grid centered={true}>
+						<Grid.Row columns={3}>
+							{this.props.selectedTopic.polls.map((poll, index) => {
+								return (
+									<Card style={{padding: '20px', margin: '20px', height: '520px'}} key={index}>
+										<Header as='h1' style={{position: 'absolute', left: '0px', top: '0px', zIndex: '-100'}} />
+										<Header as='h4' content={poll.question}/>
+										{poll.options.map((option, index) => {
+											return (
+												<Segment onClick={this.select} key={index} style={{backgroundColor: 'lightgrey', color: 'black', cursor: 'pointer'}}>
+													<b>{`${option.letter}: `}</b>{option.details}
+												</Segment>
+											)
+										})}
+										<Button content='Next' style={{position: 'absolute', width: '50%', bottom: '10px', backgroundColor: '#F7B313', color: 'white', borderRadius: '30px', left: '25%'}} />
+									</Card>
+								)
+							})}
+						</Grid.Row>
+					</Grid>
 				</Container>
 				<Grid.Row>
 					<Footer />

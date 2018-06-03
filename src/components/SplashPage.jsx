@@ -66,7 +66,7 @@ class SplashPage extends React.Component {
 							<h3>"I'd like to learn how Austin's Government Works."</h3>
 						</Link>
 
-						<Link to='explore' className='xp_card'>
+						<Link to='explore' className='xp_card' onClick={this.props.viewFilter}>
 							<h3>Weigh in</h3>
 							<br/>
 							<img className='xp_card_img' src='./images/weighIn.png' alt='Face of blank person'/>

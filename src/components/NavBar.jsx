@@ -2,10 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
-import { Menu, Icon, Header } from 'semantic-ui-react';
+import { Menu, Icon, Header, Confirm } from 'semantic-ui-react';
 
 import LoginModal from './LoginModal.jsx';
-import { viewFilter } from '../actions/UserActions.js';
+import { viewFilter, logout } from '../actions/UserActions.js';
 
 class NavBar extends React.Component {
 	constructor(props) {
@@ -13,7 +13,8 @@ class NavBar extends React.Component {
 
 		this.state = {
 			loginModalOpen: false,
-			navBarOpen: false
+			navBarOpen: false,
+			logoutConfirmOpen: false
 		}
 		this.toggleLoginModal = this.toggleLoginModal.bind(this);
 		this.toggleNavbar = this.toggleNavbar.bind(this);
@@ -31,6 +32,19 @@ class NavBar extends React.Component {
 		})
 	}
 
+	logout = () => {
+		this.setState({ logoutConfirmOpen: true })
+	}
+
+	confirm= () => {
+		this.setState({ logoutConfirmOpen: false })
+		this.props.logout();
+	}
+
+	close = () => {
+		this.setState({ logoutConfirmOpen: false })
+	}
+
 	render() {
 		return (
 			<Menu id="nav_bar" className='space_between' fixed='top'>
@@ -45,20 +59,28 @@ class NavBar extends React.Component {
 
 				<Menu.Menu position='right'>
 
-					<Menu.Item className='white' link={true} onClick={this.toggleLoginModal}
+					{this.props.loggedIn &&
+						<Menu.Item className='white'>
+							<h4 className='white'>
+								Welcome{`, ${this.props.username}` || null}!
+							</h4>
+						</Menu.Item>}
+
+					<Menu.Item className='white' link={true} onClick={this.props.loggedIn ? this.logout : this.toggleLoginModal}
 					>
 						<h4 className='white'>
-							Sign In
+							{this.props.loggedIn ? 'Log Out' : 'Sign In'}
 						</h4>
 					</Menu.Item>
 
-					<Menu.Item className='white' link={true}>
-						<Link to='/portal'>
-							<h4 className='white'>
-								Portal
-							</h4>
-						</Link>
-					</Menu.Item>
+					{this.props.loggedIn && this.props.admin ? 
+						<Menu.Item className='white' link={true}>
+							<Link to='/portal'>
+								<h4 className='white'>
+									Portal
+								</h4>
+							</Link>
+						</Menu.Item> : null}
 
 					<Menu.Item className='white' link={true}>
 						<Link to='/explore'>
@@ -76,15 +98,17 @@ class NavBar extends React.Component {
 						</Link>
 					</Menu.Item>
 
-					<Menu.Item className='white' link={true}>
+					{this.props.loggedIn ? <Menu.Item className='white' link={true}>
 						<Link to='/profile'>
 							<h4 className='white'>
 								Profile
 							</h4>
 						</Link>
-					</Menu.Item>
+					</Menu.Item> : null}
 
 				</Menu.Menu>
+
+				<Confirm open={this.state.logoutConfirmOpen} onConfirm={this.confirm} onClose={this.close}/> 
 				
 				{this.state.loginModalOpen && <LoginModal
 					loginModalOpen={this.state.loginModalOpen}
@@ -97,12 +121,14 @@ class NavBar extends React.Component {
 
 const mapStateToProps = (state) => (
 	{
-		loggedIn: state.loggedIn
+		loggedIn: state.UserReducer.loggedIn,
+		admin: state.UserReducer.admin,
+		username: state.UserReducer.username
 	}
 )
 
 const mapDispatchToProps = (dispatch) => (
-	bindActionCreators({ viewFilter }, dispatch)
+	bindActionCreators({ viewFilter, logout }, dispatch)
 )
 
 

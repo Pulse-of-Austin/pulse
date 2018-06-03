@@ -16,6 +16,12 @@ class TrendingTopics extends React.Component {
   }
 
   render() {
+    const styles = {
+      button: {
+        width: '100%',
+        margin: '5px'
+      }
+    }
     return (
 
       <div id='trending_topics'>
@@ -24,8 +30,8 @@ class TrendingTopics extends React.Component {
         <button className='primary_orange_button'>Learn More</button>
         <hr/>
         <button className='poll_button' onClick={this.handleClick}>Collect data on bike reds only and share data with the city</button>
-        <button className='poll_button' onClick={this.handleClick}>Collect data on bike reds only and share data with the city</button>
-        <button className='poll_button' onClick={this.handleClick}>Collect data on bike reds only and share data with the city</button>
+        <button className='poll_button' onClick={this.handleClick}>Collect data for city use only</button>
+        <button className='poll_button' onClick={this.handleClick}>Minimize rental cost and allow all data collection</button>
         <br/>
         <h3 className='underline'>WEIGH IN</h3>
       </div>
