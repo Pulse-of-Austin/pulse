@@ -47,9 +47,9 @@ class Know extends React.Component {
 					<HorizontalFeed style={{float: 'left'}} />
 					<TrendingTopics style={{float: 'right'}}/>
 				</Grid.Row>
-				{/* <Grid.Row>
+				<Grid.Row>
 					<Footer />
-				</Grid.Row> */}
+				</Grid.Row>
 			</Grid>
 		);
 	}
