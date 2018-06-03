@@ -16,6 +16,10 @@ class TopicPage extends React.Component {
 		}
 	}
 
+	select = () => {
+
+	}
+
 	render() {
 		const styles = {
 			left: {
@@ -101,7 +105,7 @@ class TopicPage extends React.Component {
 						</Grid>
 					</Container>
 				</Container>
-				<Link to='/topic#weigh-in' style={{position: 'fixed', bottom: '50px', right: '50px'}}>
+				<Link to='/topic#weigh-in' style={{textAlign: 'center', position: 'fixed', bottom: '50px', right: '50px'}}>
 					<Header as='h4' content={'Weigh In Now!'} />
 					<Icon 
 						name='chevron down' 
@@ -111,6 +115,8 @@ class TopicPage extends React.Component {
 					/>
 				</Link>
 				<Container textAlign='center'>
+					<Divider />
+					<Header as='h1' content='Weigh In' />
 					<Grid centered={true}>
 						<Grid.Row columns={3}>
 							{this.props.selectedTopic.polls.map((poll, index) => {
@@ -120,7 +126,7 @@ class TopicPage extends React.Component {
 										<Header as='h4' content={poll.question}/>
 										{poll.options.map((option, index) => {
 											return (
-												<Segment onClick={this.select(name)} key={index} style={{backgroundColor: 'lightgrey', color: 'black', cursor: 'pointer'}}>
+												<Segment onClick={this.select} key={index} style={{backgroundColor: 'lightgrey', color: 'black', cursor: 'pointer'}}>
 													<b>{`${option.letter}: `}</b>{option.details}
 												</Segment>
 											)
