@@ -18,6 +18,16 @@ class SplashPage extends React.Component {
 		}
 	}
 
+	componentDidMount = () => {
+		navigator.geolocation.getCurrentPosition((position) => {
+			var location = {
+				longitude: position.coords.longitude,
+				latitude: position.coords.latitude
+			}
+			console.log(location)
+		})
+	}
+
 	render() {
 		const styles={
 			userIcon: {
