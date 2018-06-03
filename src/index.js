@@ -11,6 +11,7 @@ import Profile from './components/Profile.jsx';
 import AdminPortal from './components/AdminPortal.jsx';
 import Learn from './components/Learn.jsx';
 import Know from './components/Know.jsx';
+import TopicPage from './components/TopicPage.jsx';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
@@ -33,6 +34,7 @@ ReactDOM.render(
           <Route path='/profile' component={Profile} />
           <Route path='/learn' component={Learn} />
           <Route path='/know' component={Know} />
+          <Route path='/topic' component={TopicPage} />
         </Switch>
     </Router>
   </Provider>
