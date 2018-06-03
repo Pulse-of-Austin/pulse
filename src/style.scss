@@ -41,6 +41,7 @@ p {
 
 
 // NAVBAR
+//-----------------------------------
 #nav_bar {
     padding: 0.3%;
     color: $white;
@@ -59,7 +60,35 @@ p {
     background-color: $white;
 }
 
+// FOOTER
+//-----------------------------------
+#footer {
+    text-align: center;
+    color: $white;
+    background-color: $gray;
+
+}
+
+#blue_strip {
+    width: 100%;
+    height: 40px;
+    color: $green;
+    background-color: $green;
+}
+
+#footer_inner_box {
+    padding: 1.5% 0;
+}
+
+#footer_text {
+    width:30%;
+    margin: 0 auto 1% auto;
+    display: flex;
+    justify-content: space-around;
+}
+
 // XP CARDS
+//-----------------------------------
 #xp_card_container {
     text-align: center;
     display: flex;
@@ -78,8 +107,8 @@ p {
     margin: 1%;
 }
 
-
 // DISPLAY
+//-----------------------------------
 .space_between {
     display: flex;
     justify-content: space-between;
@@ -95,11 +124,13 @@ p {
 }
 
 // SPACING
+//-----------------------------------
 .small_margin {
     margin: 2.5%;
 }
 
 // COLOR
+//-----------------------------------
 .orange {
     color: $orange;
 }
