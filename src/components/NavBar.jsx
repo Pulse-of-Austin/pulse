@@ -37,7 +37,7 @@ class NavBar extends React.Component {
 				<Link to='/' className='space_between'>
 						<h3 id='nav_text' className="white">
 							The Pulse of Austin
-						<img id='nav_logo' src='./images/orangeOutline.png' alt='Pulse of Austin Logo'/>
+						<img id='nav_logo' src='./images/whiteOutline.png' alt='Pulse of Austin Logo'/>
 							
 						</h3>						
 				</Link>
