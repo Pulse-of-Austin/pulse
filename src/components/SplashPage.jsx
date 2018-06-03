@@ -49,30 +49,30 @@ class SplashPage extends React.Component {
 					</section>
 
 					<section id='xp_card_container'>
-						<div className='xp_card'>
+						<Link to='/learn' className='xp_card'>
 							<h3>Learn the Ropes</h3>
 							<br/>
 							<img className='xp_card_img' src='./images/learn.png' alt='Face of blank person'/>
 							<h3>"I'd like to learn how Austin's Government Works."</h3>
-						</div>
+						</Link>
 
-						<div className='xp_card'>
+						<Link to='explore' className='xp_card'>
 							<h3>Weigh in</h3>
 							<br/>
 							<img className='xp_card_img' src='./images/weighIn.png' alt='Face of blank person'/>
 							<h3>"I've got somethign to say! I want to contribute to an issue I care about."</h3>
-						</div>
+						</Link>
 
-						<div className='xp_card'>
+						<Link to='explore' className='xp_card'>
 							<h3>Be in the Know</h3>
 							<br/>
 							<img className='xp_card_img' src='./images/explore.png' alt='Face of blank person'/>
 							<h3>"I want to explore what is happening with local government in Austin."</h3>
-						</div>
+						</Link>
 					</section>
-
-					<img id='corner_image' src='./images/cornerImage.png' alt='Decoration: Three overimposed rectangles'/>
 				</div>
+
+				<Footer />
 			</div>
 		);
   }
