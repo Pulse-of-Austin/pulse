@@ -77,8 +77,31 @@ export default class AdminPortal extends Component {
   }
 
   handleSubmit = (endpoint) => {
-    console.log(endpoint, this.state);
-    axios.post(`http://api.pulseofaustin.org/${endpoint}`, this.state);
+    let formattedObj;
+    if (endpoint === 'topic') {
+      const { topicTitle: title,
+        topicDesc: description,
+        topicDets: details,
+        topicDate: vote_date,
+        topicImage: image,
+        multi: categories,
+      } = this.state;
+      formattedObj = { title, description, details, vote_date, image, categories };
+    } else if (endpoint === 'perspectives') {
+      const { perTitle: title, perTopic: topic_id, perDets: rationale } = this.state;
+      formattedObj = { title, topic_id, rationale };
+    } else if (endpoint === 'milestones') {
+      const { milTitle: title, milTopic: topic_id, milDets: description } = this.state;
+      formattedObj = { title, topic_id, description };
+    } else if (endpoint === 'details') {
+      const { detailTitle: title, detailTopic: topic_id, detailsDetails: description, detailImage: image } = this.state;
+      formattedObj = { title, description, topic_id, image };
+    } else if (endpoint === 'categories') {
+      const { category: name } = this.state;
+      formattedObj = { name };
+    }
+    console.log(`http://api.pulseofaustin.org/${endpoint}`, formattedObj);
+    axios.post(`http://api.pulseofaustin.org/${endpoint}`, formattedObj);
   }
 
   render = () => {
@@ -117,7 +140,7 @@ export default class AdminPortal extends Component {
           </Form>
           <Divider/>
           <h3 style={{ marginTop: '5vh' }}>Add a category!</h3>
-          <Form onSubmit={this.handleSubmit}>
+          <Form onSubmit={() => { this.handleSubmit('categories'); }}>
             <Form.Group widths='equal'>
               <Form.Field name='category' value={category} onChange={this.handleChange} id='form-input-control-first-name' control={Input} label='Category' placeholder='Category Title' />
             </Form.Group>
@@ -125,7 +148,7 @@ export default class AdminPortal extends Component {
           </Form>
           <Divider />
           <h3 style={{ marginTop: '5vh' }}>Add a perspective!</h3>
-          <Form onSubmit={this.handleSubmit}>
+          <Form onSubmit={() => { this.handleSubmit('perspectives'); }}>
             <Form.Group widths='equal'>
               <Form.Field name='perTitle' value={perTitle} onChange={this.handleChange} id='form-input-control-first-name' control={Input} label='Title' placeholder='Perspective Title' />
               <Form.Field name='perTopic' value={perTopic} onChange={this.handleChange} control={Select} label='Topic' options={data} placeholder='Topic' />
@@ -135,7 +158,7 @@ export default class AdminPortal extends Component {
           </Form>
           <Divider />
           <h3 style={{ marginTop: '5vh' }}>Add a milestone!</h3>
-          <Form onSubmit={this.handleSubmit} style={{ marginBottom: '7vh' }}>
+          <Form onSubmit={() => { this.handleSubmit('milestones'); }} style={{ marginBottom: '7vh' }}>
             <Form.Group widths='equal'>
               <Form.Field name='milTitle' value={milTitle} onChange={this.handleChange} id='form-input-control-first-name' control={Input} label='Title' placeholder='Milestone Title' />
               <Form.Field name='milTopic' value={milTopic} onChange={this.handleChange} control={Select} label='Topic' options={data} placeholder='Topic' />
@@ -145,7 +168,7 @@ export default class AdminPortal extends Component {
           </Form>
           <Divider />
           <h3 style={{ marginTop: '5vh' }}>Add a detail to a topic!</h3>
-          <Form onSubmit={this.handleSubmit} style={{ marginBottom: '7vh' }}>
+          <Form onSubmit={() => { this.handleSubmit('details'); }} style={{ marginBottom: '7vh' }}>
             <Form.Group widths='equal'>
               <Form.Field name='detailTitle' value={detailTitle} onChange={this.handleChange} id='form-input-control-first-name' control={Input} label='Title' placeholder='Detail Title' />
               <Form.Field name='detailTopic' value={detailTopic} onChange={this.handleChange} control={Select} label='Topic' options={data} placeholder='Topic' />

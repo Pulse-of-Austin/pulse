@@ -61,11 +61,7 @@ class NavBar extends React.Component {
 					</Menu.Item>
 
 					<Menu.Item className='white' link={true}>
-<<<<<<< HEAD
-						<Link to='/know'>
-=======
 						<Link to='/explore'>
->>>>>>> 92dc46009fc9580043ed10fc776c132fdc9ee60a
 							<h4 className='white'>
 								Explore
 							</h4>
