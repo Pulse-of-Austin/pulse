@@ -1,6 +1,92 @@
+// Color variables
+$orange: #F7B313;
+$blue: #B7D2E5;
+$green: #9BD6D4;
+$pink: #EB6F02;
+$gray: #4A4A4A;
+$white: #FAFAFA;
+$baige: #F0EDE7;
+$darkBaige: #E2DACB;
+
+// HTML Tags
 body {
-    font-family: helvetica;
-    // background-color: lightgray;
-    margin-left: 20px;
-    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    margin: 0;
+    background-color: $white;
 }
+
+h1 {
+    font-size: 4rem;
+    margin: 0;
+    color: $gray;
+}
+
+h2 {
+    font-size: 3rem;
+    margin: 0;
+    color: $gray;
+}
+
+h3 {
+    font-size: 2rem;
+    margin: 0;
+    color: $gray;
+}
+
+p {
+    font-size: 1rem;
+    color: $gray;
+}
+
+#nav_bar {
+    padding: 1%;
+    color: $white;
+    background-color: $orange;
+}
+
+// FLEXBOX
+.space_between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.space_around {
+    display: flex;
+    justify-content: space-around;
+}
+
+// COLOR
+.orange {
+    color: $orange;
+}
+
+.blue {
+    color: $blue;
+}
+
+.green {
+    color: $green;
+}
+
+.pink {
+    color: $pink;
+}
+
+.gray {
+    color: $gray;
+}
+
+.white {
+    color: $white;
+}
+
+.baige {
+    color: $baige;
+}
+
+.darkBaige {
+    color: $darkBaige;
+}
+
+
