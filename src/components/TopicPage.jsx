@@ -74,9 +74,9 @@ class TopicPage extends React.Component {
 					</Container>
 					<Segment textAlign='center' style={{marginBottom: '200px'}}>
 						<Header as='h1' content='MILESTONES' />
-						<Image src='./assets/images/milestones.png' />
+						<Image src='./images/milestones.png' />
 						<Header as='h1' content={'WHERE YOU\'LL FIND DOCKLESS TRANSPORTATION'} />
-						<Image src='./assets/images/map.png' />
+						<Image src='./images/map.png' />
 					</Segment>
 					<Container textAlign='center' style={{marginTop: '-150px', marginBottom: '200px'}}>
 						<Header as='h1' content='PERSPECTIVES' />

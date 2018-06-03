@@ -34,81 +34,42 @@ class SplashPage extends React.Component {
 
 				<NavBar />
 
-				<section className='centerH small_margin'>
-					<img src='./images/orangeOutline.png' alt='Pulse of Austin Logo' />
-					<h2>We exist to make civic engagement personal and simple,</h2>
-					<h2>where ALL recident voices shape the future of our city</h2>
-				</section>
+				<div className='large_margin'>
+					<section className='centerH'>
+						<h1>We exist to make civic engagement personal and simple,</h1>
+						<h1>where ALL recident voices shape the future of our city</h1>
+					</section>
 
-				<section className='centerH'>	
-					<h2>How do you want to get started?</h2>
-				</section>
+					<section className='centerH small_margin'>	
+						<h2>How do you want to get started?</h2>
+					</section>
 
-				<section id='xp_card_container'>
-					<div className='xp_card'>
-						<h3>Learn the Ropes</h3>
-						<img className='xp_card_img' src='./images/learn.png' alt='Face of blank person'/>
-						<h3>"I'd like to learn how Austin's Government Works."</h3>
-					</div>
+					<section id='xp_card_container'>
+						<div className='xp_card'>
+							<h3>Learn the Ropes</h3>
+							<br/>
+							<img className='xp_card_img' src='./images/learn.png' alt='Face of blank person'/>
+							<h3>"I'd like to learn how Austin's Government Works."</h3>
+						</div>
 
-					<div className='xp_card'>
-						<h3>Learn the Ropes</h3>
-						<img className='xp_card_img' src='./images/weighIn.png' alt='Face of blank person'/>
-						<h3>"I've got somethign to say! I want to contribute to an issue I care about."</h3>
-					</div>
+						<div className='xp_card'>
+							<h3>Weigh in</h3>
+							<br/>
+							<img className='xp_card_img' src='./images/weighIn.png' alt='Face of blank person'/>
+							<h3>"I've got somethign to say! I want to contribute to an issue I care about."</h3>
+						</div>
 
-					<div className='xp_card'>
-						<h3>Learn the Ropes</h3>
-						<img className='xp_card_img' src='./images/explore.png' alt='Face of blank person'/>
-						<h3>"I want to explore what is happening with local government in Austin."</h3>
-					</div>
-				</section>
+						<div className='xp_card'>
+							<h3>Be in the Know</h3>
+							<br/>
+							<img className='xp_card_img' src='./images/explore.png' alt='Face of blank person'/>
+							<h3>"I want to explore what is happening with local government in Austin."</h3>
+						</div>
+					</section>
 
+					<img id='corner_image' src='./images/cornerImage.png' alt='Decoration: Three overimposed rectangles'/>
+				</div>
 			</div>
-
-			// <Grid>
-			// 	<Grid.Row>
-			// 		<NavBar />
-			// 	</Grid.Row>
-			// 	<Grid.Row style={{marginTop: '100px'}}>
-			// 		<Link to ='/learn'>
-			// 			<Segment style={styles.segment}>
-			// 				<Header as='h2' content='Learn The Ropes' />
-			// 				<Icon
-			// 					style={styles.userIcon}
-			// 					size='massive'
-			// 					name='user'
-			// 				/>
-			// 				<Header as='h3' content="I'd like to learn how Austin Government works." />
-			// 			</Segment>
-			// 		</Link>
-			// 		<Link to='/weigh-in'>
-			// 			<Segment style={styles.segment}>
-			// 				<Header as='h2' content='Weigh In' />
-			// 				<Icon
-			// 					style={styles.userIcon}
-			// 					size='massive'
-			// 					name='user'
-			// 				/>
-			// 				<Header as='h3' content="I've got something to say! I want to contribute to an issue I care about." />
-			// 			</Segment>
-			// 		</Link>
-			// 		<Link to='/know'>
-			// 			<Segment style={styles.segment}>
-			// 				<Header as='h2' content='Be in The Know' />
-			// 				<Icon
-			// 					style={styles.userIcon}
-			// 					size='massive'
-			// 					name='user'
-			// 				/>
-			// 				<Header as='h3' content="I want to explore what's happening with local government in Austin." />
-			// 			</Segment>
-			// 		</Link>	
-			// 	</Grid.Row>
-			// 	<Grid.Row>
-			// 		<Footer />
-			// 	</Grid.Row>
-			// </Grid>
 		);
   }
 }
