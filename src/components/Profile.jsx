@@ -1,20 +1,22 @@
 import React from 'react';
+import NavBar from './NavBar';
 
 class Profile extends React.Component {
-	constructor(props) {
-		super(props);
+  constructor(props) {
+    super(props);
 
-		this.state = {
+    this.state = {
 
-		}
-	}
+    }
+  }
 
-	render() {
-		return (
-			<div>
-			</div>
-		);
-	}
+  render = () => {
+    return (
+      <div>
+        <NavBar />
+      </div>
+    );
+  }
 }
 
 export default Profile;

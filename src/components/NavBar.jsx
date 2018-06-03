@@ -60,7 +60,7 @@ class NavBar extends React.Component {
 					</Menu.Item>
 
 					<Menu.Item className='white' link={true}>
-						<Link to='/portal'>
+						<Link to='/know'>
 							<h4 className='white'>
 								Explore
 							</h4>
@@ -68,7 +68,7 @@ class NavBar extends React.Component {
 					</Menu.Item>
 
 					<Menu.Item className='white' link={true}>
-						<Link to='/portal'>
+						<Link to='/learn'>
 							<h4 className='white'>
 								Local Gov
 							</h4>
@@ -76,7 +76,7 @@ class NavBar extends React.Component {
 					</Menu.Item>
 
 					<Menu.Item className='white' link={true}>
-						<Link to='/portal'>
+						<Link to='/profile'>
 							<h4 className='white'>
 								Profile
 							</h4>
