@@ -19,44 +19,52 @@ class Know extends React.Component {
 
 	render() {
 		return (
-			<Grid>
-				<Grid.Row>
-					<NavBar />
-				</Grid.Row>
-				<Grid.Row style={{ marginTop: '5vh' }}>
-					<Menu style={{ marginLeft: '100px'}} pointing={true} secondary={true}>
-						<Menu.Item 
-							link={true} 
-							active={this.state.activeItem === 'latest'}
-							onClick={() => this.setState({ activeItem: 'latest' })}
-						>
-							Latest Happenings
-						</Menu.Item>
-						<Menu.Item 
-							link={true} 
-							active={this.state.activeItem === 'saved'}
-							onClick={() => this.setState({ activeItem: 'saved'})}
-						>
-							Saved Topics
-						</Menu.Item>
-					</Menu>
+
+			<div>
+				<NavBar />
+
+				<section id='know_container'>
+
+					<div className='space_between'>
+						<h3>Making civic engagement personal and simple.</h3>
+						<Search />
+					</div>
+
+					<div className='space_between'>
+
+						<Menu id='search_section' pointing={true} secondary={true}>
+							<Menu.Item link={true}
+								active={this.state.activeItem === 'latest'}
+								onClick={() => this.setState({ activeItem: 'latest' })}>
+								Latest Happenings
+							</Menu.Item>
+
+							<Menu.Item link={true}
+								active={this.state.activeItem === 'saved'}
+								onClick={() => this.setState({ activeItem: 'saved' })}>
+								Saved Topics
+							</Menu.Item>
+						</Menu>
+
+					</div>
 					
-					<Search/>
-				</Grid.Row>
-				<Grid.Row>
-					<HorizontalFeed style={{float: 'left'}} />
-					<TrendingTopics style={{float: 'right'}}/>
-				</Grid.Row>
-				{/* <Grid.Row>
-					<Footer />
-				</Grid.Row> */}
-			</Grid>
+					<HorizontalFeed />
+					<TrendingTopics />
+				</section>
+
+				<section>
+					
+				</section>
+
+				<Footer />
+
+			</div>
 		);
 	}
 }
 
 const mapDispatchToProps = (dispatch) => (
-	bindActionCreators({ }, dispatch)
+	bindActionCreators({}, dispatch)
 )
 
 export default connect(null, mapDispatchToProps)(Know);

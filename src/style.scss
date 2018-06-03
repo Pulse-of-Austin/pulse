@@ -39,6 +39,42 @@ p {
     color: $gray;
 }
 
+// COMPONENTS
+//-----------------------------------
+
+// Know
+#know_container {
+    padding: 0 10%;
+    margin-top: 5%;
+    background-color: $white;
+}
+
+#search_section {
+    margin: 2.5% 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+// Horizontal Feed
+#treding_polls {
+    text-align: left;
+    margin: 10% 0 0 0;
+    position: relative;
+    right: 200px;
+}
+
+// Trending Topics
+#trending_topics {
+    width: 20%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
+    left: 60%;  
+    bottom: 250px;  
+}
+
 // NAVBAR
 //-----------------------------------
 #nav_bar {
@@ -145,6 +181,54 @@ p {
 
 .large_margin {
     margin: 10%;
+}
+
+// TEXT DECORATION
+//-----------------------------------
+.underline {
+    text-decoration: underline;
+}
+
+// BUTTONS
+//-----------------------------------
+#primary_blue_button {
+    padding: 10px;
+    margin: 10px 0;
+    color: $white;
+    background-color: $green;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+}
+
+#primary_blue_button:hover {
+    color: $green;
+    background-color: $white;
+}
+
+.primary_orange_button {
+    padding: 10px;
+    margin: 10px 0;
+    color: $white;
+    background-color: $orange;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+}
+
+.primary_orange_button:hover {
+    color: $orange;
+    background-color: $white;
+}
+
+.poll_button {
+    padding: 5%;
+    margin: 2.5%;
+    color: $gray;
+    background-color: $baige;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
 }
 
 // COLOR
