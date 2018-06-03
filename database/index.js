@@ -139,6 +139,36 @@ knex.schema.hasTable('users').then((exists) => {
           .catch((err) => { console.error(err); });
       }
     });
+  })
+  .then(() => {
+    knex.schema.hasTable('perspectives').then((exists) => {
+      if (!exists) {
+        knex.schema.createTable('perspectives', (table) => {
+          table.increments('id').primary();
+          table.integer('topic_id').references('topic.id');
+          table.string('rationale');
+        })
+          .then(() => {
+            console.log('Created perspectives table');
+          })
+          .catch((err) => { console.error(err); });
+      }
+    });
+  })
+  .then(() => {
+    knex.schema.hasTable('milestones').then((exists) => {
+      if (!exists) {
+        knex.schema.createTable('milestones', (table) => {
+          table.increments('id').primary();
+          table.integer('topic_id').references('topic.id');
+          table.string('description');
+        })
+          .then(() => {
+            console.log('Created milestones table');
+          })
+          .catch((err) => { console.error(err); });
+      }
+    });
   });
 
 module.exports = knex;
