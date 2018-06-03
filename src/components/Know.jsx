@@ -4,6 +4,7 @@ import { Grid, Header, Search, Menu } from 'semantic-ui-react';
 import NavBar from './NavBar.jsx';
 import Footer from './Footer.jsx';
 import HorizontalFeed from './HorizontalFeed.jsx';
+import TrendingTopics from './TrendingTopics.jsx';
 
 class Know extends React.Component {
 	constructor(props) {
@@ -14,14 +15,18 @@ class Know extends React.Component {
 		}
 	}
 
+	openTopic = () => {
+
+	}
+
 	render() {
 		return (
 			<Grid>
 				<Grid.Row>
 					<NavBar />
 				</Grid.Row>
-				<Grid.Row style={{ marginTop: '100px' }}>
-					<Menu style={{marginLeft: '100px'}} pointing={true} secondary={true}>
+				<Grid.Row style={{ marginTop: '5vh' }}>
+					<Menu style={{ marginLeft: '100px'}} pointing={true} secondary={true}>
 						<Menu.Item 
 							link={true} 
 							active={this.state.activeItem === 'latest'}
@@ -41,13 +46,12 @@ class Know extends React.Component {
 					<Search/>
 				</Grid.Row>
 				<Grid.Row>
-					<HorizontalFeed />
+					<HorizontalFeed style={{float: 'left'}} />
+					<TrendingTopics style={{float: 'right'}}/>
 				</Grid.Row>
-				<Grid.Row>
-				</Grid.Row>
-				<Grid.Row>
+				{/* <Grid.Row>
 					<Footer />
-				</Grid.Row>
+				</Grid.Row> */}
 			</Grid>
 		);
 	}
