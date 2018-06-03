@@ -18,10 +18,23 @@ class Footer extends React.Component {
 				inverted={true}
 				style={{ minHeight: '40px' }}
 			>
-				<Menu.Menu position='right'>
-					<Menu.Item position='right'>
+				<Menu.Menu position='left'>
+					<Menu.Item position='left'>
 						&copy; 2018 &mdash; Pulse of Austin
 					</Menu.Item>
+					<div class="ui three column very relaxed grid">
+  					<div class="column">
+    					<p>About Us</p>
+    					<p>Contact</p>
+    					<p>Terms and Conditions</p>
+  					</div>
+						<div class="ui vertical divider"> and </div>
+ 							<div class="column">
+	 							<p>Facebook</p>
+								<p>Twitter</p>
+							  <p>Instagram</p>
+							 </div>
+							 
 				</Menu.Menu>
 			</Menu>
 		)

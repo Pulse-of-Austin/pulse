@@ -4,11 +4,12 @@ import { Grid, Accordion, Header } from 'semantic-ui-react';
 import NavBar from './NavBar.jsx';
 import Footer from './Footer.jsx';
 import Category from './Category.jsx';
+import TrendingTopics from './TrendingTopics.jsx'
 
 class WeighIn extends React.Component {
 	constructor(props) {
 		super(props);
-		
+
 		this.state = {
 			activeIndex: null,
 			categories: [
@@ -148,7 +149,7 @@ class WeighIn extends React.Component {
 		const newIndex = activeIndex === index ? null : index
 		this.setState({ activeIndex: newIndex })
 	}
-	
+
 	render() {
 		return (
 			<Grid>
@@ -158,9 +159,9 @@ class WeighIn extends React.Component {
 				<Grid.Row style={{ marginLeft: '100px', marginTop: '100px' }}>
 					<Header as='h1' content='Topics' />
 					<Accordion style={{marginTop: '200px'}}>
-						{this.state.categories.map((category, index) => 
-							<Category 
-								category={category} 
+						{this.state.categories.map((category, index) =>
+							<Category
+								category={category}
 								key={index}
 								index={index}
 								activeIndex={this.state.activeIndex}
