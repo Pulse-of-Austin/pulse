@@ -101,7 +101,49 @@ export default class AdminPortal extends Component {
       formattedObj = { name };
     }
     console.log(`http://api.pulseofaustin.org/${endpoint}`, formattedObj);
-    axios.post(`http://api.pulseofaustin.org/${endpoint}`, formattedObj);
+    // axios.post(`http://api.pulseofaustin.org/${endpoint}`, formattedObj)
+    //   .then(() => { this.setState({
+    //     topicTitle: '',
+    //     topicDesc: '',
+    //     topicDets: '',
+    //     topicDate: '',
+    //     topicImage: '',
+    //     category: '',
+    //     perTitle: '',
+    //     perTopic: '',
+    //     perDets: '',
+    //     milTitle: '',
+    //     milTopic: '',
+    //     milDets: '',
+    //     multi: [],
+    //     detailTitle: '',
+    //     detailTopic: '',
+    //     detailDetails: '',
+    //     detailImage: '',
+    //   });
+    //   });
+    // axios.post(`http://localhost:4000/${endpoint}`, formattedObj)
+    //   .then(() => {
+    //     this.setState({
+    //       topicTitle: '',
+    //       topicDesc: '',
+    //       topicDets: '',
+    //       topicDate: '',
+    //       topicImage: '',
+    //       category: '',
+    //       perTitle: '',
+    //       perTopic: '',
+    //       perDets: '',
+    //       milTitle: '',
+    //       milTopic: '',
+    //       milDets: '',
+    //       multi: [],
+    //       detailTitle: '',
+    //       detailTopic: '',
+    //       detailDetails: '',
+    //       detailImage: '',
+    //     });
+    //   });
   }
 
   render = () => {
