@@ -2,6 +2,53 @@ export const DefaultState = {
 	loggedIn: false,
 	user: null,
 	viewFilter: false,
+	topicStubs: [
+		{
+			id: 0,
+			title: 'Smart Mobility Plan',
+			subtitle: 'How will our transportation look with autonomous vehicles?',
+			category: 'Transportation',
+			imageURL: 'http://static.dnaindia.com/sites/default/files/styles/full/public/2017/01/28/542924-bullet-train-012717.jpg'
+		},
+		{
+			id: 1,
+			title: 'Strategic Mobility Plan',
+			subtitle: 'Austin\'s priorities and what they mean for the future of transportation',
+			category: 'Transportation',
+			imageURL: 'http://static.dnaindia.com/sites/default/files/styles/full/public/2017/01/28/542924-bullet-train-012717.jpg'
+		},
+		{
+			id: 2,
+			title: 'Development',
+			subtitle: '$300 million dollars in investment have been put aside for a new housing project.',
+			category: 'Development',
+			imageURL: 'http://static.dnaindia.com/sites/default/files/styles/full/public/2017/01/28/542924-bullet-train-012717.jpg'
+		},
+	],
+	selectedTopicStubs: [
+		{
+			id: 0,
+			title: 'Smart Mobility Plan',
+			subtitle: 'How will our transportation look with autonomous vehicles?',
+			category: 'Transportation',
+			imageURL: 'http://static.dnaindia.com/sites/default/files/styles/full/public/2017/01/28/542924-bullet-train-012717.jpg'
+		},
+		{
+			id: 1,
+			title: 'Strategic Mobility Plan',
+			subtitle: 'Austin\'s priorities and what they mean for the future of transportation',
+			category: 'Transportation',
+			imageURL: 'http://static.dnaindia.com/sites/default/files/styles/full/public/2017/01/28/542924-bullet-train-012717.jpg'
+		},
+		{
+			id: 2,
+			title: 'Development',
+			subtitle: '$300 million dollars in investment have been put aside for a new housing project.',
+			category: 'Development',
+			imageURL: 'http://static.dnaindia.com/sites/default/files/styles/full/public/2017/01/28/542924-bullet-train-012717.jpg'
+		},
+	],
+	currentLastStubIndex: 2,
 	selectedTopic: {
 		title: 'Dockless Mobility Pilot',
 		subtitle: 'How will dockless transportation options impact Austin\'s transportation ecosystem? \n What could these seervices mean for data privacy?',

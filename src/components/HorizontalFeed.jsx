@@ -1,15 +1,55 @@
 import React from 'react';
+import axios from 'axios';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Button, Header, Grid, Segment, Image, Card, Divider, Icon } from 'semantic-ui-react';
+
+import { selectTopic, selectNewTopicStubs, selectPreviousTopicStubs } from '../actions/TopicActions.js';
 
 class HorizontalFeed extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-
+			topicStubs: []
 		}
 	}
-	
+
+	componentDidMount() {
+		let topics = [];
+		for (let i = 0; i < 3; i++) {
+			topics.push(this.props.topicStubs[i])
+		}
+		this.setState({
+			topicStubs: topics
+		});
+	}
+
+	componentWillReceiveProps() {
+		this.setState({
+			topicStubs: this.props.topicStubs
+		});
+	}
+
+	openTopic = (topicId) => {
+		axios.get(`/topic?${topicId}`)
+			.then(topic => {
+				this.props.selectTopic(topic);
+				this.props.history.push(`/topic?${topic.name}`)
+			})
+			.catch(err => {
+				console.error(err);
+			})
+	}	
+
+	moreTopics = () => {
+		this.props.selectNewTopicStubs();
+	}
+
+	previousTopics = () => {
+		this.props.selectPreviousTopicStubs();
+	}
+
 	render() {
 		const styles ={
 			left: {
@@ -30,43 +70,35 @@ class HorizontalFeed extends React.Component {
 			<Grid centered={true} style={{marginTop: '-35px'}}>
 				<Grid.Row columns={5}>
 					<Grid.Column width={1}>
-						<Icon style={styles.left} name='left chevron' size='huge' />
+						<Icon style={styles.left} name='left chevron' size='huge' onClick={this.previousTopics}/>
 					</Grid.Column>
-					<Grid.Column width={4}>
-						<Segment>
-							<img src='http://static.dnaindia.com/sites/default/files/styles/full/public/2017/01/28/542924-bullet-train-012717.jpg' style={{width: '70%'}}/>
-							<Card>
-								<Card.Meta content='TRANSPORTATION' />
-								<Card.Header as='h4' content='Smart Mobility Plan' style={{ marginTop: '0' }}/>
-								<Card.Description as='h4' content='How will our transportation look with autonomous vehicles?' style={{ marginTop: '0' }}/>
-								<Card.Description as='h5' content='Read More >' style={{ marginTop: '0', float: 'right' }}/>
-							</Card>
-						</Segment>
-					</Grid.Column>
-					<Grid.Column width={4}>
-						<Segment>
-							<img src='http://static.dnaindia.com/sites/default/files/styles/full/public/2017/01/28/542924-bullet-train-012717.jpg' style={{width: '70%'}}/>
-							<Card>
-								<Card.Meta content='TRANSPORTATION' />
-								<Card.Header as='h4' content='Strategic Mobility Plan' style={{ marginTop: '0' }}/>
-								<Card.Description as='h4' content={'Austin\'s priorites and what they mean for the future of transportation.'} style={{ marginTop: '0' }}/>
-								<Card.Description as='h5' content='Read More >' style={{ marginTop: '0', float: 'right' }}/>
-							</Card>
-						</Segment>
-					</Grid.Column>
-					<Grid.Column width={4}>
-						<Segment>
-							<img src='http://static.dnaindia.com/sites/default/files/styles/full/public/2017/01/28/542924-bullet-train-012717.jpg' style={{width: '70%'}}/>
-							<Card>
-								<Card.Meta content='DEVELOPMENT' />
-								<Card.Header as='h4' content='Affordability' style={{ marginTop: '0' }}/>
-								<Card.Description as='h4' content='$300 million dollars in investment have been put aside for a new housing project.' style={{ marginTop: '0' }}/>
-								<Card.Description as='h5' content='Read More >' style={{ marginTop: '0', float: 'right' }}/>
-							</Card>
-						</Segment>
-					</Grid.Column>
+					{this.state.topicStubs[2] ? 
+						this.state.topicStubs.map((topicStub, index) => {
+							return (
+								<Grid.Column width={4} key={index}>
+									<Segment>
+										<img src={topicStub.imageURL} style={{width: '70%'}}/>
+										<Card>
+											<Card.Meta content={topicStub.category.toUpperCase()} />
+											<Card.Header as='h4' content={topicStub.title} style={{ marginTop: '0' }}/>
+											<Card.Description as='h4' content={topicStub.subtitle} style={{ marginTop: '0' }}/>
+											<Card.Description as='h5' content='Read More >' onClick={() => this.openTopic(topicStub.id)} style={{ marginTop: '0', float: 'right' }}/>
+										</Card>
+									</Segment>
+								</Grid.Column>
+							)
+						})
+						: 
+						<div>
+							<Grid.Column width={1}/>
+							<Grid.Column width={12}>
+								<Header style={{margin: 'auto', height: '300px'}} as='h3' content='No new topics right now :(' />
+							</Grid.Column>
+							<Grid.Column width={1}/>
+						</div>
+					}
 					<Grid.Column width={1}>
-						<Icon style={styles.right} name='right chevron' size='huge' />
+						<Icon style={styles.right} name='right chevron' size='huge' onClick={this.moreTopics} />
 					</Grid.Column>
 				</Grid.Row>
 				<Divider />
@@ -87,4 +119,14 @@ class HorizontalFeed extends React.Component {
 	}
 }
 
-export default HorizontalFeed;
+const mapStateToProps = (state) => (
+	{
+		topicStubs: state.TopicReducer.selectedTopicStubs
+	}
+)
+
+const mapDispatchToProps = (dispatch) => (
+	bindActionCreators({ selectTopic, selectNewTopicStubs, selectPreviousTopicStubs }, dispatch)
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(HorizontalFeed);
