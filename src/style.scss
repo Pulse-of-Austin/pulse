@@ -39,8 +39,8 @@ p {
     color: $gray;
 }
 
-
 // NAVBAR
+//-----------------------------------
 #nav_bar {
     padding: 0.3%;
     color: $white;
@@ -59,27 +59,66 @@ p {
     background-color: $white;
 }
 
+// FOOTER
+//-----------------------------------
+#footer {
+    text-align: center;
+    color: $white;
+    background-color: $gray;
+
+}
+
+#blue_strip {
+    width: 100%;
+    height: 40px;
+    color: $green;
+    background-color: $green;
+}
+
+#footer_inner_box {
+    padding: 1.5% 0;
+}
+
+#footer_text {
+    width:30%;
+    margin: 0 auto 1% auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+#corner_image {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
 // XP CARDS
+//-----------------------------------
 #xp_card_container {
     text-align: center;
     display: flex;
     justify-content: space-evenly;
-    margin: 2.55% 10%;
+    margin: 5% 0;
 }
 
 .xp_card {
     width: 20%;
     height: auto;
+    padding: 2%;
 }
 
 .xp_card_img {
-    width: 100%;
+    width: 90%;
     height: auto;
-    margin: 1%;
 }
 
+.xp_card:hover {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 // DISPLAY
+//-----------------------------------
 .space_between {
     display: flex;
     justify-content: space-between;
@@ -95,11 +134,21 @@ p {
 }
 
 // SPACING
+//-----------------------------------
 .small_margin {
     margin: 2.5%;
 }
 
+.medium_margin {
+    margin: 5%;
+}
+
+.large_margin {
+    margin: 10%;
+}
+
 // COLOR
+//-----------------------------------
 .orange {
     color: $orange;
 }
