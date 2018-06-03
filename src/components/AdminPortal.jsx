@@ -77,8 +77,8 @@ export default class AdminPortal extends Component {
   }
 
   handleSubmit = (endpoint) => {
-    console.log(this.state);
-    // axios.post(`http://api.pulseofaustin.org/${endpoint}`, this.state);
+    console.log(endpoint, this.state);
+    axios.post(`http://api.pulseofaustin.org/${endpoint}`, this.state);
   }
 
   render = () => {
