@@ -39,7 +39,6 @@ p {
     color: $gray;
 }
 
-
 // NAVBAR
 //-----------------------------------
 #nav_bar {
@@ -93,7 +92,7 @@ p {
     text-align: center;
     display: flex;
     justify-content: space-evenly;
-    margin: 2.55% 10%;
+    margin: 5%;
 }
 
 .xp_card {
@@ -127,6 +126,14 @@ p {
 //-----------------------------------
 .small_margin {
     margin: 2.5%;
+}
+
+.medium_margin {
+    margin: 5%;
+}
+
+.large_margin {
+    margin: 10%;
 }
 
 // COLOR
