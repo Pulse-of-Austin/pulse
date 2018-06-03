@@ -199,11 +199,13 @@ p {
     border-radius: 5px;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border: none;
+    cursor: pointer;
 }
 
 #primary_blue_button:hover {
     color: $green;
     background-color: $white;
+    cursor: pointer;
 }
 
 .primary_orange_button {
@@ -214,11 +216,13 @@ p {
     border-radius: 5px;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border: none;
+    cursor: pointer;
 }
 
 .primary_orange_button:hover {
     color: $orange;
     background-color: $white;
+    cursor: pointer;
 }
 
 .poll_button {
@@ -229,6 +233,7 @@ p {
     border-radius: 5px;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border: none;
+    cursor: pointer;
 }
 
 // COLOR

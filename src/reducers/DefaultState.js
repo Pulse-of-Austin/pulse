@@ -1,6 +1,6 @@
 export const DefaultState = {
 	loggedIn: true,
-	admin: false,
+	admin: true,
 	user: null,
 	viewFilter: false,
 	username: 'Kate',

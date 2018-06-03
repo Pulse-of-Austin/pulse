@@ -3,6 +3,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Button, Header, Grid, Segment, Image, Card, Divider, Icon } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 import { selectTopic, selectNewTopicStubs, selectPreviousTopicStubs } from '../actions/TopicActions.js';
 
@@ -35,14 +36,14 @@ class HorizontalFeed extends React.Component {
 	}
 
 	openTopic = (topicId) => {
-		axios.get(`/topic?${topicId}`)
-			.then(topic => {
-				this.props.selectTopic(topic);
-				this.props.history.push(`/topic?${topic.name}`)
-			})
-			.catch(err => {
-				console.error(err);
-			})
+		// axios.get(`/topic?${topicId}`)
+		// 	.then(topic => {
+		// 		this.props.selectTopic(topic);
+		// 		this.props.history.push(`/topic?${topic.name}`)
+		// 	})
+		// 	.catch(err => {
+		// 		console.error(err);
+		// 	})
 	}	
 
 	moreTopics = () => {
@@ -92,7 +93,9 @@ class HorizontalFeed extends React.Component {
 												<Card.Meta content={topicStub.category.toUpperCase()} />
 												<Card.Header as='h4' content={topicStub.title} style={{ marginTop: '0' }}/>
 												<Card.Description as='h4' content={topicStub.subtitle} style={{ marginTop: '0' }}/>
-												<Card.Description as='h5' content='Read More >' onClick={() => this.openTopic(topicStub.id)} style={{ marginTop: '0', float: 'right' }}/>
+												<Link to='/topic'>
+													<Card.Description as='h5' content='Read More >' onClick={() => this.openTopic(topicStub.id)} style={{ marginTop: '0', float: 'right' }}/>
+												</Link>
 											</Card>
 										</Segment>
 									</Grid.Column>
