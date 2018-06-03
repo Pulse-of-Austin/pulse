@@ -79,7 +79,7 @@ class HorizontalFeed extends React.Component {
 			<Grid centered={true} style={{marginTop: '-35px'}}>
 				<Grid.Row columns={5}>
 					<Grid.Column width={1}>
-						<Icon style={styles.left} name='left chevron' size='huge' onClick={this.previousTopics}/>
+						<Icon style={styles.left} name='left chevron' size='big' onClick={this.previousTopics}/>
 					</Grid.Column>
 					{this.state.topicStubs[2] ? 
 						this.state.topicStubs.map((topicStub, index) => {
@@ -109,22 +109,17 @@ class HorizontalFeed extends React.Component {
 						</div>
 					}
 					<Grid.Column width={1}>
-						<Icon style={styles.right} name='right chevron' size='huge' onClick={this.moreTopics} />
+						<Icon style={styles.right} name='right chevron' size='big' onClick={this.moreTopics} />
 					</Grid.Column>
 				</Grid.Row>
-				<Divider />
-				<Grid.Row>
-					<Segment textAlign='left' style={{marginLeft: '-40%'}}>
-						<Header 
-							as='h3' 
-							content='TRENDING POLLS' 
-							style={{textDecoration: 'underline'}} 
-						/>
-						<p>The latest topics Austinites are talking about.</p>
-						<p>Weigh in and share your thoughts too.</p>
-						<Button primary={true} onClick={this.toggleVotesModal}>HOW YOUR VOTE GETS USED</Button>
-					</Segment>
-				</Grid.Row>
+
+				<div id='treding_polls'>
+					<h3 className='underline gray'>TRENDING POLLS</h3>
+					<br/>
+					<p>The latest topics Austinites are talking about.<br/>Weigh in and share your thoughts too.</p>
+					<button id='primary_blue_button' onClick={this.toggleVotesModal}>HOW YOUR VOTE GETS USED</button>
+				</div>
+
 				<VotesModal modalOpen={this.state.modalOpen} toggleVotesModal={this.toggleVotesModal} />
 			</Grid>
 		)
