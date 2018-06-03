@@ -70,7 +70,7 @@ class SplashPage extends React.Component {
 							<h3>Weigh in</h3>
 							<br/>
 							<img className='xp_card_img' src='./images/weighIn.png' alt='Face of blank person'/>
-							<h3>"I've got somethign to say! I want to contribute to an issue I care about."</h3>
+							<h3>"I've got something to say! I want to contribute to an issue I care about."</h3>
 						</Link>
 
 						<Link to='explore' className='xp_card'>
