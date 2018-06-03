@@ -26,8 +26,7 @@ class TopicDropdown extends Component {
     this.state = { value: '' };
   }
 
-  render = () => {
-    return (
+  render = () => (
       <div style={{ marginBottom: '3vh' }}>
         <Dropdown
           placeholder='Select a topic'
@@ -36,8 +35,7 @@ class TopicDropdown extends Component {
           options={data}
         />
       </div>
-    );
-  }
+  );
 }
 
 export default TopicDropdown;
