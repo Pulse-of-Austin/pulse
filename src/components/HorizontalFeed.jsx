@@ -6,12 +6,15 @@ import { Button, Header, Grid, Segment, Image, Card, Divider, Icon } from 'seman
 
 import { selectTopic, selectNewTopicStubs, selectPreviousTopicStubs } from '../actions/TopicActions.js';
 
+import VotesModal from './VotesModal.jsx';
+
 class HorizontalFeed extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			topicStubs: []
+			topicStubs: [],
+			modalOpen: false
 		}
 	}
 
@@ -50,6 +53,12 @@ class HorizontalFeed extends React.Component {
 		this.props.selectPreviousTopicStubs();
 	}
 
+	toggleVotesModal = () => {
+		this.setState({
+			modalOpen: !this.state.modalOpen
+		})
+	}
+
 	render() {
 		const styles ={
 			left: {
@@ -74,19 +83,21 @@ class HorizontalFeed extends React.Component {
 					</Grid.Column>
 					{this.state.topicStubs[2] ? 
 						this.state.topicStubs.map((topicStub, index) => {
-							return (
-								<Grid.Column width={4} key={index}>
-									<Segment>
-										<img src={topicStub.imageURL} style={{width: '70%'}}/>
-										<Card>
-											<Card.Meta content={topicStub.category.toUpperCase()} />
-											<Card.Header as='h4' content={topicStub.title} style={{ marginTop: '0' }}/>
-											<Card.Description as='h4' content={topicStub.subtitle} style={{ marginTop: '0' }}/>
-											<Card.Description as='h5' content='Read More >' onClick={() => this.openTopic(topicStub.id)} style={{ marginTop: '0', float: 'right' }}/>
-										</Card>
-									</Segment>
-								</Grid.Column>
-							)
+							if (topicStub) {
+								return (
+									<Grid.Column width={4} key={index}>
+										<Segment>
+											<img src={topicStub.imageURL} style={{width: '70%'}}/>
+											<Card>
+												<Card.Meta content={topicStub.category.toUpperCase()} />
+												<Card.Header as='h4' content={topicStub.title} style={{ marginTop: '0' }}/>
+												<Card.Description as='h4' content={topicStub.subtitle} style={{ marginTop: '0' }}/>
+												<Card.Description as='h5' content='Read More >' onClick={() => this.openTopic(topicStub.id)} style={{ marginTop: '0', float: 'right' }}/>
+											</Card>
+										</Segment>
+									</Grid.Column>
+								)
+							}
 						})
 						: 
 						<div>
@@ -111,9 +122,10 @@ class HorizontalFeed extends React.Component {
 						/>
 						<p>The latest topics Austinites are talking about.</p>
 						<p>Weigh in and share your thoughts too.</p>
-						<Button primary={true}>HOW YOUR VOTE GETS USED</Button>
+						<Button primary={true} onClick={this.toggleVotesModal}>HOW YOUR VOTE GETS USED</Button>
 					</Segment>
 				</Grid.Row>
+				<VotesModal modalOpen={this.state.modalOpen} toggleVotesModal={this.toggleVotesModal} />
 			</Grid>
 		)
 	}
