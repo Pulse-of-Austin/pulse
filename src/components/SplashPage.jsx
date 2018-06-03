@@ -1,9 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Grid, Container, Icon, Header, Segment } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 import NavBar from './NavBar.jsx';
 import Footer from './Footer.jsx';
+
+import { viewFilter } from '../actions/UserActions.js';
 
 class SplashPage extends React.Component {
 	constructor(props) {
@@ -74,4 +78,8 @@ class SplashPage extends React.Component {
   }
 }
 
-export default SplashPage;
+const mapDispatchToProps = (dispatch) => (
+	bindActionCreators({ viewFilter }, dispatch)
+)
+
+export default connect(null, mapDispatchToProps)(SplashPage);

@@ -33,8 +33,8 @@ ReactDOM.render(
           <Route exact path='/portal' component={AdminPortal} />
           <Route path='/profile' component={Profile} />
           <Route path='/learn' component={Learn} />
-          <Route path='/know' component={Know} />
-          <Route path='/topic' component={TopicPage} />
+          <Route path='/explore' component={Know} />
+          <Route path='/topic*' component={TopicPage} />
         </Switch>
     </Router>
   </Provider>
