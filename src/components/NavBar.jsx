@@ -32,54 +32,55 @@ class NavBar extends React.Component {
 
 	render() {
 		return (
-			<Menu id="nav_bar" className='space_between' fixed='top'  style={{ minHeight: '40px' }}>
+			<Menu id="nav_bar" className='space_between' fixed='top'  style={{ height: '100px' }}>
 
 				<Link to='/'>
-					<Menu.Item link={true}>
 						<h3 className="white">
 							The Pulse of Austin
 						</h3>
-					</Menu.Item>
+						<h5 className="white" style={{marginTop: '0'}}>
+							Making civic engagement personal and simple.
+						</h5>
 				</Link>
 
 				<Menu.Menu position='right'>
 
 					<Menu.Item className='white' link={true} onClick={this.toggleLoginModal}
 					>
-						<h3 className='white'>
+						<h4 className='white'>
 							Sign In
-						</h3>
+						</h4>
 					</Menu.Item>
 
 					<Menu.Item className='white' link={true}>
 						<Link to='/portal'>
-							<h3 className='white'>
+							<h4 className='white'>
 								Portal
-							</h3>
+							</h4>
 						</Link>
 					</Menu.Item>
 
 					<Menu.Item className='white' link={true}>
 						<Link to='/portal'>
-							<h3 className='white'>
+							<h4 className='white'>
 								Explore
-							</h3>
+							</h4>
 						</Link>
 					</Menu.Item>
 
 					<Menu.Item className='white' link={true}>
 						<Link to='/portal'>
-							<h3 className='white'>
+							<h4 className='white'>
 								Local Gov
-							</h3>
+							</h4>
 						</Link>
 					</Menu.Item>
 
 					<Menu.Item className='white' link={true}>
 						<Link to='/portal'>
-							<h3 className='white'>
+							<h4 className='white'>
 								Profile
-							</h3>
+							</h4>
 						</Link>
 					</Menu.Item>
 
