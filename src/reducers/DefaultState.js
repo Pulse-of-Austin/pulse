@@ -26,12 +26,12 @@ export const DefaultState = {
 		perspectives: [
 			{
 				who: 'Central Austin Resident',
-				date: '18 April 2018',
+				when: '18 April 2018',
 				what: 'Data should be 100% open -- the value of how (and if) people are using different transportation options may be worth more than the service itself.'
 			},
 			{
 				who: 'East Austin Resident',
-				date: '20 April 2018',
+				when: '20 April 2018',
 				what: 'With dockless bikes, not only can we collected the dataa bout where the trip started and ended, but we can also collect data on the exact route the rider took. This granularity of data is unprecedented and would be instrumental in strategically planning biking infrastructures.'
 			}
 		]

@@ -44,12 +44,12 @@ class TopicPage extends React.Component {
 						<Header.Subheader as='h3' content={this.props.selectedTopic.subtitle}/>
 						<Divider/>
 						<Container textAlign='center'>
-							<Header as='h1' content='OVERVIEW' />
+							<Header style={{marginTop: '50px'}} as='h1' content='OVERVIEW' />
 							<Header.Subheader as='h3' content={this.props.selectedTopic.overview}/>
 						</Container>
 					</Segment>
 					<Container textAlign='center'>
-						<Header as='h1' content='DETAILS' />
+						<Header style={{marginTop: '50px', marginBottom: '50px'}} as='h1' content='DETAILS' />
 						<Grid centered={true} style={{ marginTop: '-35px' }}>
 							<Grid.Row columns={5}>
 								<Grid.Column width={1}>
@@ -74,8 +74,31 @@ class TopicPage extends React.Component {
 					</Container>
 					<Segment textAlign='center' style={{marginBottom: '200px'}}>
 						<Header as='h1' content='MILESTONES' />
+						<Image src='./assets/images/milestones.png' />
 						<Header as='h1' content={'WHERE YOU\'LL FIND DOCKLESS TRANSPORTATION'} />
+						<Image src='./assets/images/map.png' />
 					</Segment>
+					<Container textAlign='center' style={{marginTop: '-150px', marginBottom: '200px'}}>
+						<Header as='h1' content='PERSPECTIVES' />
+						<Grid>
+							<Grid.Row columns={2}>
+								<Grid.Column>
+									<Header style={{marginTop: '100px'}} as='h2' content='Dockless Ridership Data is Highly Valuable' />
+								</Grid.Column>
+								<Grid.Column>
+									{this.props.selectedTopic.perspectives.map(perspective => {
+										return (
+											<Card>
+												<Card.Header content={perspective.who} />
+												<Card.Meta><Icon name='clock' />{perspective.when}</Card.Meta>
+												<Card.Content content={perspective.what} />
+											</Card>
+										)
+									})}
+								</Grid.Column>
+							</Grid.Row>
+						</Grid>
+					</Container>
 				</Container>
 				<Grid.Row>
 					<Footer />
