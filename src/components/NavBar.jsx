@@ -32,15 +32,14 @@ class NavBar extends React.Component {
 
 	render() {
 		return (
-			<Menu id="nav_bar" className='space_between' fixed='top'  style={{ height: '70px' }}>
+			<Menu id="nav_bar" className='space_between' fixed='top'>
 
-				<Link to='/'>
-						<h4 className="white">
+				<Link to='/' className='space_between'>
+						<h3 id='nav_text' className="white">
 							The Pulse of Austin
-						</h4>
-						<h5 className="white" style={{marginTop: '0'}}>
-							Making civic engagement personal and simple.
-						</h5>
+						<img id='nav_logo' src='./images/orangeOutline.png' alt='Pulse of Austin Logo'/>
+							
+						</h3>						
 				</Link>
 
 				<Menu.Menu position='right'>
