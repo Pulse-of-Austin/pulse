@@ -12,20 +12,27 @@ class Footer extends React.Component {
 
 	render() {
 		return (
-			<Menu inverted={true} fixed='bottom' textAlign='center'>
-				<Grid>
-					<Grid.Row>
-						<Image style={{marginLeft: '45%', marginTop: '10px', marginBottom: '-10px'}} src='./images/pulsefooter.png'/>
-					</Grid.Row>
-					<Grid.Row>
-						<Header style={{marginLeft: '50%'}} as='h3' content='ABOUT US  |  CONTACT US  |  FAQS' />
-					</Grid.Row>
-					<Grid.Row>
-						<Icon name='instagram' size='big' link={true} inverted={true} />
-						<Icon name='facebook' size='big' link={true} inverted={true}/>
-					</Grid.Row>
-				</Grid>
-			</Menu>
+
+			<div id='footer'>
+
+				<aside id='blue_strip'>- </aside>
+
+				<section id='footer_inner_box'>
+					<img src='./images/pulsefooter.png' alt='Pulse of Austin Logo'/>
+					
+					<div id='footer_text'>
+						<h3 className='white'>ABOUT US</h3>
+						<h3 className='white'>CONTACT US</h3>
+						<h3 className='white'>FAQS</h3>
+					</div>
+
+					<div>
+						<Icon  className='small_margin' name='instagram' size='big' link={true} inverted={true}/>
+						<Icon className='small_margin' name='facebook' size='big' link={true} inverted={true}/>
+					</div>
+				</section>
+
+			</div>
 		)
 	}
 }
