@@ -35,7 +35,7 @@ class NavBar extends React.Component {
 		return (
 			<Menu id="nav_bar" className='space_between' fixed='top'>
 
-				<Link to='/' className='space_between'>
+				<Link to='/' className='space_between' style={{marginTop: '10px'}}>
 						<h3 id='nav_text' className="white">
 							The Pulse of Austin
 						<img id='nav_logo' src='./images/whiteOutline.png' alt='Pulse of Austin Logo'/>
