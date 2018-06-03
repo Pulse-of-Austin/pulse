@@ -69,7 +69,7 @@ class NavBar extends React.Component {
 					</Menu.Item>
 
 					<Menu.Item className='white' link={true}>
-						<Link to='/portal'>
+						<Link to='/learn'>
 							<h4 className='white'>
 								Local Gov
 							</h4>
