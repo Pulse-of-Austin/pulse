@@ -64,6 +64,8 @@ class SplashPage extends React.Component {
 					</div>
 				</section>
 
+				<Footer />
+
 			</div>
 
 			// <Grid>
