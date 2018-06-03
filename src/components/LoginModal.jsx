@@ -19,7 +19,7 @@ class LoginModal extends React.Component {
   }
 
   login = () => {
-    axios.post('/login', {
+    axios.post('http://api.pulseofaustin.org/auth/login', {
       email: this.state.email,
       password: this.state.password,
     })
@@ -32,12 +32,13 @@ class LoginModal extends React.Component {
   }
 
   signup = () => {
-    axios.post('/signup', {
+    console.log('sign up')
+    axios.post('http://api.pulseofaustin.org/auth/signup', {
       email: this.state.email,
       password: this.state.password,
     })
       .then((data) => {
-
+        console.log('yay');
       })
       .catch((err) => {
         console.error(err);
@@ -80,9 +81,9 @@ class LoginModal extends React.Component {
                   onChange={this.onChange}
                 />
               </Form.Group>
-              <Button 
+              <Button
                 primary={true}
-                content='Log In'
+                content={this.state.loginOrSignup === 'login' ? 'Login' : 'Sign up'}
                 onClick={this.state.loginOrSignup === 'login' ? this.login : this.signup}
               />
             </Form>
