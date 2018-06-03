@@ -15,6 +15,10 @@ class Know extends React.Component {
 		}
 	}
 
+	openTopic = () => {
+
+	}
+
 	render() {
 		return (
 			<Grid>
@@ -22,7 +26,7 @@ class Know extends React.Component {
 					<NavBar />
 				</Grid.Row>
 				<Grid.Row style={{ marginTop: '5vh' }}>
-					<Menu style={{marginLeft: '100px'}} pointing={true} secondary={true}>
+					<Menu style={{ marginLeft: '100px'}} pointing={true} secondary={true}>
 						<Menu.Item 
 							link={true} 
 							active={this.state.activeItem === 'latest'}
