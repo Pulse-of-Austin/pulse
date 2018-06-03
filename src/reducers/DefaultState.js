@@ -1,6 +1,7 @@
 export const DefaultState = {
 	loggedIn: false,
 	user: null,
+	viewFilter: false,
 	selectedTopic: {
 		title: 'Dockless Mobility Pilot',
 		subtitle: 'How will dockless transportation options impact Austin\'s transportation ecosystem? \n What could these seervices mean for data privacy?',

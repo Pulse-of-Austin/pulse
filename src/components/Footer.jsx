@@ -12,7 +12,7 @@ class Footer extends React.Component {
 
 	render() {
 		return (
-			<Menu inverted={true} fixed='bottom' textAlign='center'>
+			<Menu inverted={true} fixed='bottom'>
 				<Grid>
 					<Grid.Row>
 						<Image style={{marginLeft: '45%', marginTop: '10px', marginBottom: '-10px'}} src='./images/pulsefooter.png'/>

@@ -1,9 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Grid, Container, Icon, Header, Segment } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 import NavBar from './NavBar.jsx';
 import Footer from './Footer.jsx';
+
+import { viewFilter } from '../actions/UserActions.js';
 
 class SplashPage extends React.Component {
 	constructor(props) {
@@ -47,19 +51,25 @@ class SplashPage extends React.Component {
 				<section id='xp_card_container'>
 					<div className='xp_card'>
 						<h3>Learn the Ropes</h3>
-						<img className='xp_card_img' src='./images/learn.png' alt='Face of blank person'/>
+						<Link to='/learn'>
+							<img className='xp_card_img' src='./images/learn.png' alt='Face of blank person'/>
+						</Link>
 						<h3>"I'd like to learn how Austin's Government Works."</h3>
 					</div>
 
 					<div className='xp_card'>
-						<h3>Learn the Ropes</h3>
-						<img className='xp_card_img' src='./images/weighIn.png' alt='Face of blank person'/>
+						<h3>Weigh In</h3>
+						<Link to='/explore' onClick={this.props.viewFilter}>
+							<img className='xp_card_img' src='./images/weighIn.png' alt='Face of blank person'/>
+						</Link>
 						<h3>"I've got somethign to say! I want to contribute to an issue I care about."</h3>
 					</div>
 
 					<div className='xp_card'>
-						<h3>Learn the Ropes</h3>
-						<img className='xp_card_img' src='./images/explore.png' alt='Face of blank person'/>
+						<h3>Explore</h3>
+						<Link to='/explore'>
+							<img className='xp_card_img' src='./images/explore.png' alt='Face of blank person'/>
+						</Link>
 						<h3>"I want to explore what is happening with local government in Austin."</h3>
 					</div>
 				</section>
@@ -115,4 +125,8 @@ class SplashPage extends React.Component {
   }
 }
 
-export default SplashPage;
+const mapDispatchToProps = (dispatch) => (
+	bindActionCreators({ viewFilter }, dispatch)
+)
+
+export default connect(null, mapDispatchToProps)(SplashPage);
