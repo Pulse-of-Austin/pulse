@@ -86,24 +86,35 @@ p {
     justify-content: space-around;
 }
 
+#corner_image {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
 // XP CARDS
 //-----------------------------------
 #xp_card_container {
     text-align: center;
     display: flex;
     justify-content: space-evenly;
-    margin: 5%;
+    margin: 5% 0;
 }
 
 .xp_card {
     width: 20%;
     height: auto;
+    padding: 2%;
 }
 
 .xp_card_img {
-    width: 100%;
+    width: 90%;
     height: auto;
-    margin: 1%;
+}
+
+.xp_card:hover {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 // DISPLAY
