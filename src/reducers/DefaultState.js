@@ -1,5 +1,6 @@
 export const DefaultState = {
-	loggedIn: false,
+	loggedIn: true,
+	admin: false,
 	user: null,
 	viewFilter: false,
 	topicStubs: [
