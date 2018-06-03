@@ -1,5 +1,7 @@
 import React from 'react';
 import { Grid, Header, Search, Menu } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import NavBar from './NavBar.jsx';
 import Footer from './Footer.jsx';
@@ -13,10 +15,6 @@ class Know extends React.Component {
 		this.state = {
 			activeItem: 'latest'
 		}
-	}
-
-	openTopic = () => {
-
 	}
 
 	render() {
@@ -57,4 +55,8 @@ class Know extends React.Component {
 	}
 }
 
-export default Know;
+const mapDispatchToProps = (dispatch) => (
+	bindActionCreators({ }, dispatch)
+)
+
+export default connect(null, mapDispatchToProps)(Know);

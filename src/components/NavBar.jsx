@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Menu, Icon, Header } from 'semantic-ui-react';
 
 import LoginModal from './LoginModal.jsx';
+import { viewFilter } from '../actions/UserActions.js';
 
 class NavBar extends React.Component {
 	constructor(props) {
@@ -60,7 +61,11 @@ class NavBar extends React.Component {
 					</Menu.Item>
 
 					<Menu.Item className='white' link={true}>
+<<<<<<< HEAD
 						<Link to='/know'>
+=======
+						<Link to='/explore'>
+>>>>>>> 92dc46009fc9580043ed10fc776c132fdc9ee60a
 							<h4 className='white'>
 								Explore
 							</h4>
@@ -101,7 +106,7 @@ const mapStateToProps = (state) => (
 )
 
 const mapDispatchToProps = (dispatch) => (
-	bindActionCreators({  }, dispatch)
+	bindActionCreators({ viewFilter }, dispatch)
 )
 
 
