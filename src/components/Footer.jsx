@@ -27,8 +27,17 @@ class Footer extends React.Component {
 					</div>
 
 					<div>
-						<Icon  className='small_margin' name='instagram' size='big' link={true} inverted={true}/>
-						<Icon className='small_margin' name='facebook' size='big' link={true} inverted={true}/>
+						<a href='https://www.facebook.com/pulseofaustin/'>
+							<Icon 
+								className='small_margin' 
+								name='facebook' 
+								size='big' link={true} 
+								inverted={true}
+							/>
+						</a>
+						<a href=''>
+							<Icon  className='small_margin' name='instagram' size='big' link={true} inverted={true}/>
+						</a>
 					</div>
 				</section>
 

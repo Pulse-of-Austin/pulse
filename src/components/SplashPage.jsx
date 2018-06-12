@@ -26,6 +26,13 @@ class SplashPage extends React.Component {
 			}
 			console.log(location)
 		})
+		window.addEventListener('resize', this.resize.bind(this));
+		this.resize();
+	}
+
+	resize() {
+		this.setState({ resize: window.innerWidth <= 1600 })
+		this.setState({ mobile: window.innerWidth <= 1000 })
 	}
 
 	render() {
