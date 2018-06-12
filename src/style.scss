@@ -91,7 +91,8 @@ p {
 }
 
 .nav_drop {
-    margin-top: 5%;
+    // margin-top: 5%;
+    padding-top: 5%;
     background-color: $white;
 }
 
@@ -141,6 +142,7 @@ p {
     width: 20%;
     height: auto;
     padding: 2%;
+    z-index: 100;
 }
 
 .xp_card_img {

@@ -1,11 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Grid, Container, Icon, Header, Segment } from 'semantic-ui-react';
+import { Image } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 import NavBar from './NavBar.jsx';
-import Footer from './Footer.jsx';
 
 import { viewFilter } from '../actions/UserActions.js';
 
@@ -51,7 +50,7 @@ class SplashPage extends React.Component {
 		}
 		return (
 
-			<div className='nav_drop'>
+			<div className='nav_drop' style={{overflowY: 'hidden'}}>
 
 				<NavBar />
 
@@ -88,8 +87,7 @@ class SplashPage extends React.Component {
 						</Link>
 					</section>
 				</div>
-
-				<Footer />
+				<Image src='./images/cornerImage.png' style={{position: 'fixed', bottom: '0px', right: '0px', zIndex: '5'}}/>
 			</div>
 		);
   }

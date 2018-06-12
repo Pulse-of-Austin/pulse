@@ -47,7 +47,7 @@ class NavBar extends React.Component {
 
 	render() {
 		return (
-			<Menu id="nav_bar" className='space_between' fixed='top'>
+			<Menu id="nav_bar" className='space_between' fixed='top' pointing={true}>
 
 				<Link to='/' className='space_between' style={{marginTop: '10px'}}>
 						<h3 id='nav_text' className="white">
