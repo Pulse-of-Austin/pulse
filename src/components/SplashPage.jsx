@@ -1,11 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Grid, Container, Icon, Header, Segment } from 'semantic-ui-react';
+import { Image } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 import NavBar from './NavBar.jsx';
-import Footer from './Footer.jsx';
 
 import { viewFilter } from '../actions/UserActions.js';
 
@@ -26,6 +25,13 @@ class SplashPage extends React.Component {
 			}
 			console.log(location)
 		})
+		window.addEventListener('resize', this.resize.bind(this));
+		this.resize();
+	}
+
+	resize() {
+		this.setState({ resize: window.innerWidth <= 1600 })
+		this.setState({ mobile: window.innerWidth <= 1000 })
 	}
 
 	render() {
@@ -44,14 +50,14 @@ class SplashPage extends React.Component {
 		}
 		return (
 
-			<div className='nav_drop'>
+			<div style={{paddingTop: this.state.resize ? '10%' : '5%'}}>
 
 				<NavBar />
 
 				<div className='large_margin'>
 					<section className='centerH'>
 						<h1>We exist to make civic engagement personal and simple,</h1>
-						<h1>where ALL recident voices shape the future of our city</h1>
+						<h1>where ALL resident voices shape the future of our city</h1>
 					</section>
 
 					<section className='centerH small_margin'>	
@@ -81,8 +87,7 @@ class SplashPage extends React.Component {
 						</Link>
 					</section>
 				</div>
-
-				<Footer />
+				<Image src='./images/cornerImage.png' style={{position: 'fixed', bottom: '0px', right: '0px', zIndex: '5'}}/>
 			</div>
 		);
   }
