@@ -10,21 +10,21 @@ export const DefaultState = {
 			title: 'Smart Mobility Plan',
 			subtitle: 'How will our transportation look with autonomous vehicles?',
 			category: 'Transportation',
-			imageURL: 'http://static.dnaindia.com/sites/default/files/styles/full/public/2017/01/28/542924-bullet-train-012717.jpg'
+			imageURL: 'http://movabilityaustin.org/wp-content/uploads/2018/01/Austin-Capital-MetroRail.jpg'
 		},
 		{
 			id: 1,
 			title: 'Strategic Mobility Plan',
-			subtitle: 'Austin\'s priorities and what they mean for the future of transportation',
+			subtitle: 'Austin\'s priorities and what they mean for the future of transportation.',
 			category: 'Transportation',
-			imageURL: 'http://static.dnaindia.com/sites/default/files/styles/full/public/2017/01/28/542924-bullet-train-012717.jpg'
+			imageURL: 'http://movabilityaustin.org/wp-content/uploads/2018/01/Austin-Capital-MetroRail.jpg'
 		},
 		{
 			id: 2,
 			title: 'Development',
-			subtitle: '$300 million dollars in investment have been put aside for a new housing project.',
+			subtitle: '$300 million dollars have been put aside for a new housing project.',
 			category: 'Development',
-			imageURL: 'http://static.dnaindia.com/sites/default/files/styles/full/public/2017/01/28/542924-bullet-train-012717.jpg'
+			imageURL: 'http://movabilityaustin.org/wp-content/uploads/2018/01/Austin-Capital-MetroRail.jpg'
 		},
 	],
 	selectedTopicStubs: [
@@ -33,21 +33,21 @@ export const DefaultState = {
 			title: 'Smart Mobility Plan',
 			subtitle: 'How will our transportation look with autonomous vehicles?',
 			category: 'Transportation',
-			imageURL: 'http://static.dnaindia.com/sites/default/files/styles/full/public/2017/01/28/542924-bullet-train-012717.jpg'
+			imageURL: 'http://www.autoguide.com/blog/wp-content/uploads/2015/12/google-self-driving-car-project.jpg'
 		},
 		{
 			id: 1,
 			title: 'Strategic Mobility Plan',
 			subtitle: 'Austin\'s priorities and what they mean for the future of transportation',
 			category: 'Transportation',
-			imageURL: 'http://static.dnaindia.com/sites/default/files/styles/full/public/2017/01/28/542924-bullet-train-012717.jpg'
+			imageURL: 'http://movabilityaustin.org/wp-content/uploads/2018/01/Austin-Capital-MetroRail.jpg'
 		},
 		{
 			id: 2,
 			title: 'Development',
-			subtitle: '$300 million dollars in investment have been put aside for a new housing project.',
+			subtitle: '$300 million dollars have been put aside for a new housing project.',
 			category: 'Development',
-			imageURL: 'http://static.dnaindia.com/sites/default/files/styles/full/public/2017/01/28/542924-bullet-train-012717.jpg'
+			imageURL: 'https://files.probuilder.com/s3fs-public/styles/con/public/brandon-griggs-82205.jpg?itok=ZOWE2Low'
 		},
 	],
 	currentLastStubIndex: 2,

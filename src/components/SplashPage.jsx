@@ -50,14 +50,14 @@ class SplashPage extends React.Component {
 		}
 		return (
 
-			<div className='nav_drop' style={{overflowY: 'hidden'}}>
+			<div style={{paddingTop: this.state.resize ? '10%' : '5%'}}>
 
 				<NavBar />
 
 				<div className='large_margin'>
 					<section className='centerH'>
 						<h1>We exist to make civic engagement personal and simple,</h1>
-						<h1>where ALL recident voices shape the future of our city</h1>
+						<h1>where ALL resident voices shape the future of our city</h1>
 					</section>
 
 					<section className='centerH small_margin'>	
