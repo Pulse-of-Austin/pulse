@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint .",
     "start": "concurrently \"npm run react-dev\" \"npm run server-dev\"",
-    "build": "webpack -d",
+    "build": "nvm install 10 && npm install && npm install react-favicon && npm install pm2 -g && npm install concurrently -g && npm install webpack && webpack -d && pm2 restart index",
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon server/index.js"
   },

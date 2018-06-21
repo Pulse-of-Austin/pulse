@@ -73,7 +73,7 @@ class NavBar extends React.Component {
 						</h4>
 					</Menu.Item>
 
-					{this.props.loggedIn && this.props.admin ? 
+					{this.props.loggedIn && this.props.admin === 'admin' ? 
 						<Menu.Item className='white' link={true}>
 							<Link to='/portal'>
 								<h4 className='white'>
